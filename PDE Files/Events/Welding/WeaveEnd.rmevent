@@ -1,0 +1,68 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "Event",
+      "Id": "WeaveEnd",
+      "EventSettings": {
+        "$id": "3",
+        "$type": "EventSettings",
+        "DataContractNameUid": {
+          "$type": "Guid",
+          "$value": "157021e4-fda0-49bd-ad83-70bfd178b65a"
+        },
+        "Descriptions": {
+          "$id": "4",
+          "$type": "List<string>",
+          "$values": [
+            "Example: Weave End"
+          ]
+        },
+        "ToStringMethodBody": {
+          "$id": "5",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{WeaveEndCommand}"
+        },
+        "ToCodeMethodBody": {
+          "$id": "6",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{WeaveEndCommand}"
+        },
+        "ValidEventIndices": {
+          "$type": "EventIndices",
+          "$value": "Before, After"
+        }
+      },
+      "EventParameters": {
+        "$id": "7",
+        "$type": "List<object>",
+        "$values": [
+          {
+            "$id": "8",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "b65653a2-4b3b-4729-826e-cd74b693adc8"
+            },
+            "DefaultValue": "Weave End",
+            "Descriptions": {
+              "$id": "9",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "WeaveEndCommand",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

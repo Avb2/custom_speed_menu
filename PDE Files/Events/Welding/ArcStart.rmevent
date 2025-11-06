@@ -1,0 +1,89 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "Event",
+      "Id": "ArcStart",
+      "EventSettings": {
+        "$id": "3",
+        "$type": "EventSettings",
+        "DataContractNameUid": {
+          "$type": "Guid",
+          "$value": "186aa8f7-9478-44ff-a0d0-e80d76027466"
+        },
+        "Descriptions": {
+          "$id": "4",
+          "$type": "List<string>",
+          "$values": [
+            "Example: Weld Start[1,1]"
+          ]
+        },
+        "ToStringMethodBody": {
+          "$id": "5",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{ArcStartCommand}[{WeldStartSchedule}]"
+        },
+        "ToCodeMethodBody": {
+          "$id": "6",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{ArcStartCommand}[{WeldStartSchedule}]"
+        },
+        "ValidEventIndices": {
+          "$type": "EventIndices",
+          "$value": "Before, After"
+        }
+      },
+      "EventParameters": {
+        "$id": "7",
+        "$type": "List<object>",
+        "$values": [
+          {
+            "$id": "8",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "0b2cd9f2-cf7e-407a-8f90-af0ae5511b2d"
+            },
+            "DefaultValue": "Weld Start",
+            "Descriptions": {
+              "$id": "9",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "ArcStartCommand",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "10",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "51aa4a77-7b47-4c04-b99a-957847b8a5f3"
+            },
+            "DefaultValue": "1,1",
+            "Descriptions": {
+              "$id": "11",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "WeldStartSchedule",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

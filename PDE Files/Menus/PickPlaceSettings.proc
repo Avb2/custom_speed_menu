@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProcessPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <section
+    ClassName="PickPlaceSettings">
+    <SettingContract
+      Label="Pick and Place Settings"
+      ContractKey="DM_790c5c97-620a-4ec3-912a-8c36fed685f3"
+      Domain="Cell"
+      InvalidDomains="Operation|TaskOperation|Transition"
+      UiHandlerAssemblyName="Robotmaster.Rise.dll"
+      UiHandlerBehaviorName="Robotmaster.Rise.Modules.PropertyViewer.PropertyViewerBehavior"
+      DataHandlerAssemblyName="null"
+      DataHandlerTypeName="null"
+      DataHandlerMethodName="null"
+      DataTypeAssemblyName="Robotmaster.Rise.dll"
+      DataTypeName="Robotmaster.Rise.BaseClasses.Settings.ExternalMenuData"
+      ImageUri="null"
+      ImageKey="f0c1" />
+    <CustomSettings>
+      <Cat
+        label="General Settings"
+        enable="true"
+        visible="true">
+        <BoolParam
+          label="Enable Pick Place commands"
+          enable="true"
+          visible="true"
+          UID="{3B414DE9-D74D-4C28-9418-01A27609D93B}"
+          postVar="IsPickPlaceOutputEnabled"
+          defVal="true">
+          <Desc>
+            <Text
+              line="Enables command output for Pick and place operations." />
+          </Desc>
+        </BoolParam>
+      </Cat>
+      <Cat
+        label="Command Settings"
+        enable="true"
+        visible="true">
+        <TxtParam
+          label="Gripper Open command"
+          enable="true"
+          visible="true"
+          UID="{20BF77C8-4011-4BBF-911C-71ACFC5FAFC4}"
+          postVar="GripperOpenCommand"
+          defVal="GripperOpen()">
+          <Desc>
+            <Text
+              line="Enter name of command used for opening the gripper." />
+            <Text
+              line="" />
+            <Text
+              line="This macro is output at the:" />
+            <Text
+              line="- Beginning of a pick operation" />
+            <Text
+              line="- End of a place operation" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Gripper Close command"
+          enable="true"
+          visible="true"
+          UID="{7E71761B-5067-4BCB-8F8F-CBD409F72F05}"
+          postVar="GripperCloseCommand"
+          defVal="GripperClose()">
+          <Desc>
+            <Text
+              line="Enter name of command used for closing the gripper." />
+            <Text
+              line="" />
+            <Text
+              line="This macro is output at the:" />
+            <Text
+              line="- End of a pick operation" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+    </CustomSettings>
+  </section>
+</ProcessPackage>

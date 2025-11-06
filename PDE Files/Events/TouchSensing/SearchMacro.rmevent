@@ -1,0 +1,112 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "Event",
+      "Id": "SearchMacro",
+      "EventSettings": {
+        "$id": "3",
+        "$type": "EventSettings",
+        "DataContractNameUid": {
+          "$type": "Guid",
+          "$value": "bebf3784-5634-40b0-818c-abe7b434470d"
+        },
+        "Descriptions": {
+          "$id": "4",
+          "$type": "List<string>",
+          "$values": [
+            "Search Macro event.",
+            "",
+            "Example: CALL SEARCH_RM(P[3],P[4],10,2)"
+          ]
+        },
+        "ToStringMethodBody": {
+          "$id": "5",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "CALL {MacroName}({MacroPositionsArguments},{MacroArguments})"
+        },
+        "ToCodeMethodBody": {
+          "$id": "6",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "CALL {MacroName}({MacroPositionsArguments},{MacroArguments})"
+        },
+        "ValidEventIndices": {
+          "$type": "EventIndices",
+          "$value": "Before"
+        }
+      },
+      "EventParameters": {
+        "$id": "7",
+        "$type": "List<object>",
+        "$values": [
+          {
+            "$id": "8",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "64b9eda3-0bb8-4d7f-855a-92ba0fc5aa31"
+            },
+            "DefaultValue": "SEARCH_RM",
+            "Descriptions": {
+              "$id": "9",
+              "$type": "List<string>",
+              "$values": [
+                "Example: SEARCH_RM"
+              ]
+            },
+            "Id": "MacroName",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "10",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "4229134d-792c-439b-81a5-88a9326c3e1b"
+            },
+            "DefaultValue": "",
+            "Descriptions": {
+              "$id": "11",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "MacroArguments",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "12",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "1e79b497-1b35-48e2-af15-717fb5322222"
+            },
+            "DefaultValue": "P[ ],P[ ]",
+            "Descriptions": {
+              "$id": "13",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "MacroPositionsArguments",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

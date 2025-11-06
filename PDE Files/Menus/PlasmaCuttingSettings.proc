@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProcessPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <section
+    ClassName="PlasmaCuttingSettings">
+    <SettingContract
+      Label="Plasma Cutting Settings"
+      ContractKey="PM_8f72f9ea-dd1b-4570-9b66-e516721233ea"
+      Domain="Setup"
+      InvalidDomains="Operation|TaskOperation|Transition"
+      UiHandlerAssemblyName="Robotmaster.Rise.dll"
+      UiHandlerBehaviorName="Robotmaster.Rise.Modules.PropertyViewer.PropertyViewerBehavior"
+      DataHandlerAssemblyName="null"
+      DataHandlerTypeName="null"
+      DataHandlerMethodName="null"
+      DataTypeAssemblyName="Robotmaster.Rise.dll"
+      DataTypeName="Robotmaster.Rise.BaseClasses.Settings.ExternalMenuData"
+      ImageUri="null"
+      ImageKey="f0c1" />
+    <CustomSettings>
+      <Cat
+        label="Command: Set Process"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Output Type"
+          enable="true"
+          visible="true"
+          UID="{534B19F0-C20B-470D-AF88-E2E6E049F22B}"
+          postVar="PlasmaProcessOutputType"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disabled"
+              itemLabel="Disabled" />
+            <Item
+              index="1"
+              variableName="AsProgramCall"
+              itemLabel="As a Program Call" />
+            <Item
+              index="2"
+              variableName="AsCommand"
+              itemLabel="As a Command" />
+          </List>
+        </ListParam>
+        <TxtParam
+          label="Command Name"
+          enable="true"
+          visible="true"
+          UID="{3D151DA9-8019-4017-8EDB-83A7E5837841}"
+          postVar="PlasmaProcessCommand"
+          defVal="SET_PROCESS">
+          <Desc>
+            <Text
+              line="The command to set the plasma cutting process." />
+            <Text
+              line="" />
+            <Text
+              line="This string can reference plasma cutting parameters." />
+            <Text
+              line="Format each value according to the C# string interpolation convention" />
+            <Text
+              line="using {plasmaParameter:optionalFormat} " />
+            <Text
+              line="or {CutChartData[&quot;columnName&quot;]:optionalFormat}  tags." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="MYCOMMAND_{ProcessId}_{ArcVoltage:000.00}_{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Will generate in the robot code:" />
+            <Text
+              line="MYCOMMAND_1060_133.00_30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve the value of any column of a selected cutchart use" />
+            <Text
+              line="- CutChartData[&quot;columnName&quot;]" />
+            <Text
+              line="" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Arguments"
+          enable="true"
+          visible="true"
+          UID="{6B996EB2-EC5F-4756-98A7-A24A622C8319}"
+          postVar="PlasmaProcessArguments"
+          defVal="{ProcessId},{Current:0.##},{ArcVoltage:0.##}">
+          <Desc>
+            <Text
+              line="Used for Macro and Jobs arguments." />
+            <Text
+              line="Comma separated vales." />
+            <Text
+              line="Format each value according to the C# string interpolation convention" />
+            <Text
+              line="using {plasmaParameter:optionalFormat} " />
+            <Text
+              line="or {CutChartData[&quot;columnName&quot;]:optionalFormat}  tags." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="{ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Will generate:" />
+            <Text
+              line="ARGF 1060 ARGF 133.00  ARGF 30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve the value of any column of a selected cutchart use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+            <Text
+              line="" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Additionnal Comment"
+          enable="true"
+          visible="true"
+          UID="{A2A63AEF-40D3-4549-A943-7ED0B70871F4}"
+          postVar="PlasmaProcessComment"
+          defVal="({CutChartData[&quot;CHARACTER8&quot;]})">
+          <Desc>
+            <Text
+              line="Additional comment following the command output." />
+            <Text
+              line="" />
+            <Text
+              line="This string can reference plasma cutting parameters." />
+            <Text
+              line="Format each value according to the C# string interpolation convention" />
+            <Text
+              line="using {plasmaParameter:optionalFormat} " />
+            <Text
+              line="or {CutChartData[&quot;columnName&quot;]:optionalFormat}  tags." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="MYCOMMAND_{ProcessId}_{ArcVoltage:000.00}_{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Will generate in the robot code:" />
+            <Text
+              line="MYCOMMAND_1060_133.00_30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve the value of any column of a selected cutchart use" />
+            <Text
+              line="- CutChartData[&quot;columnName&quot;]" />
+            <Text
+              line="" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+      <Cat
+        label="Command: Plasma On"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Output Type"
+          enable="true"
+          visible="true"
+          UID="{534B19F0-C20B-470D-AF88-E2E6E049F22B}"
+          postVar="PlasmaOnOutputType"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disabled"
+              itemLabel="Disabled" />
+            <Item
+              index="1"
+              variableName="AsProgramCall"
+              itemLabel="As a Program Call" />
+            <Item
+              index="2"
+              variableName="AsCommand"
+              itemLabel="As a Command" />
+          </List>
+        </ListParam>
+        <TxtParam
+          label="Plasma On Command"
+          enable="true"
+          visible="true"
+          UID="{E2509EFE-51AD-42E7-B18D-472B69DA25EB}"
+          postVar="PlasmaOnCommand"
+          defVal="PLASMA_ON">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Plasma On Arguments"
+          enable="true"
+          visible="true"
+          UID="{FF0BC46B-F655-44B1-BE07-78676AFE96E6}"
+          postVar="PlasmaOnArguments"
+          defVal="">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+      <Cat
+        label="Command: Plasma Transfer"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Output Type"
+          enable="true"
+          visible="true"
+          UID="{D136CA6C-F2C6-42A7-ABF8-7825C6EEB1F7}"
+          postVar="PlasmaTransferOutputType"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disabled"
+              itemLabel="Disabled" />
+            <Item
+              index="1"
+              variableName="AsProgramCall"
+              itemLabel="As a Program Call" />
+            <Item
+              index="2"
+              variableName="AsCommand"
+              itemLabel="As a Command" />
+          </List>
+        </ListParam>
+        <TxtParam
+          label="Plasma Transfer Command"
+          enable="true"
+          visible="true"
+          UID="{DCA2DC97-F68F-4B46-816B-3DB7D5E74BC5}"
+          postVar="PlasmaTransferCommand"
+          defVal="PLASMA_TRANSFER">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Plasma Transfer Arguments"
+          enable="true"
+          visible="true"
+          UID="{ADEAB114-5B57-4979-8EB9-48EF6DFF8A20}"
+          postVar="PlasmaTransferArguments"
+          defVal="">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+      <Cat
+        label="Command: Pierce"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Output Type"
+          enable="true"
+          visible="true"
+          UID="{B5E44FDC-8C95-46CE-8542-77D4B5410343}"
+          postVar="PlasmaPierceOutputType"
+          defVal="2"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disabled"
+              itemLabel="Disabled" />
+            <Item
+              index="1"
+              variableName="AsProgramCall"
+              itemLabel="As a Program Call" />
+            <Item
+              index="2"
+              variableName="AsCommand"
+              itemLabel="As a Command" />
+          </List>
+        </ListParam>
+        <TxtParam
+          label="Pierce Command"
+          enable="true"
+          visible="true"
+          UID="{3229315C-3E77-497C-B85E-2FAAD100CAB6}"
+          postVar="PierceCommand"
+          defVal="WAIT   {PierceDelay:.00} (sec)">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Pierce Arguments"
+          enable="true"
+          visible="true"
+          UID="{16C9558E-2177-46AF-83FE-68EE19B7112D}"
+          postVar="PierceArguments"
+          defVal="">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+      <Cat
+        label="Command: Plasma Off"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Output Type"
+          enable="true"
+          visible="true"
+          UID="{A7DB0F16-B02E-4F35-B792-1EBE5B02492E}"
+          postVar="PlasmaOffOutputType"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disabled"
+              itemLabel="Disabled" />
+            <Item
+              index="1"
+              variableName="AsProgramCall"
+              itemLabel="As a Program Call" />
+            <Item
+              index="2"
+              variableName="AsCommand"
+              itemLabel="As a Command" />
+          </List>
+        </ListParam>
+        <TxtParam
+          label="Plasma Off Command"
+          enable="true"
+          visible="true"
+          UID="{79DCD189-3ED4-434F-BC30-8BF2C0319712}"
+          postVar="PlasmaOffCommand"
+          defVal="PLASMA_OFF">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Plasma Off Arguments"
+          enable="true"
+          visible="true"
+          UID="{A0C0A74A-A87C-4253-B381-F7E57728B768}"
+          postVar="PlasmaOffArguments"
+          defVal="">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+      <Cat
+        label="Command: AVC On"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Output Type"
+          enable="true"
+          visible="true"
+          UID="{3C7D0E31-EEDE-403A-9E95-2CE8B0FFBDEE}"
+          postVar="AvcOnOutputType"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disabled"
+              itemLabel="Disabled" />
+            <Item
+              index="1"
+              variableName="AsProgramCall"
+              itemLabel="As a Program Call" />
+            <Item
+              index="2"
+              variableName="AsCommand"
+              itemLabel="As a Command" />
+          </List>
+        </ListParam>
+        <TxtParam
+          label="AVC On Command"
+          enable="true"
+          visible="true"
+          UID="{7C6AFE0F-5892-46FE-8C39-9F1EED662E88}"
+          postVar="AvcOnCommand"
+          defVal="PLASMA_AVC_ON">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="AVC On Arguments"
+          enable="true"
+          visible="true"
+          UID="{DB929287-B507-4CF2-B5AB-EFBA306A0E50}"
+          postVar="AvcOnArguments"
+          defVal="">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+      <Cat
+        label="Command: AVC Off"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Output Type"
+          enable="true"
+          visible="true"
+          UID="{FFB1C900-6F2C-4CE3-BB26-D2616BBA1170}"
+          postVar="AvcOffOutputType"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disabled"
+              itemLabel="Disabled" />
+            <Item
+              index="1"
+              variableName="AsProgramCall"
+              itemLabel="As a Program Call" />
+            <Item
+              index="2"
+              variableName="AsCommand"
+              itemLabel="As a Command" />
+          </List>
+        </ListParam>
+        <TxtParam
+          label="AVC Off Command"
+          enable="true"
+          visible="true"
+          UID="{E85358ED-68BF-46BE-8963-31761EEDFDA7}"
+          postVar="AvcOffCommand"
+          defVal="PLASMA_AVC_OFF">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="AVC Off Arguments"
+          enable="true"
+          visible="true"
+          UID="{20452FD6-57E4-4221-98C7-A386F39A7827}"
+          postVar="AvcOffArguments"
+          defVal="">
+          <Desc>
+            <Text
+              line="List of arguments output with the corresponding command." />
+            <Text
+              line="This string can be hardcoded or reference cutcharts parameters." />
+            <Text
+              line="To use these cutcharts parameters, format each value followung the c# string interpolation convention and using the following parameter names." />
+            <Text
+              line="" />
+            <Text
+              line="Example: " />
+            <Text
+              line="String: {ProcessId},{ArcVoltage:000.00},{CutChartData[&quot;CHARACTER87&quot;]}" />
+            <Text
+              line="Code generated: 1060,133.00,30" />
+            <Text
+              line="" />
+            <Text
+              line="Available standard parameters:" />
+            <Text
+              line="- PersistentRecordId" />
+            <Text
+              line="- Revision" />
+            <Text
+              line="- ProcessId" />
+            <Text
+              line="- Current" />
+            <Text
+              line="- ArcVoltage" />
+            <Text
+              line="- PierceDelay" />
+            <Text
+              line="- CuttingSpeed" />
+            <Text
+              line="- KerfWidth" />
+            <Text
+              line="- PierceHeight" />
+            <Text
+              line="- TransferHeight" />
+            <Text
+              line="- CutHeight" />
+            <Text
+              line="" />
+            <Text
+              line="To retrieve a value from any column of a selected cutchart entry use" />
+            <Text
+              line="- CutChartData[&quot;ColumnName&quot;]" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+      <Cat
+        label="Plasma Touch Sensing"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Touch and cut points association method"
+          enable="true"
+          visible="true"
+          UID="{D9E3CF8E-BB8F-4144-8468-8B4EFB23E46F}"
+          postVar="TouchAssociationMethod"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="ByShortestDistance"
+              itemLabel="By shortest distance" />
+            <Item
+              index="1"
+              variableName="ByPlasmaModule"
+              itemLabel="By the plasma module" />
+          </List>
+        </ListParam>
+      </Cat>
+    </CustomSettings>
+  </section>
+</ProcessPackage>

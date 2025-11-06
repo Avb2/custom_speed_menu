@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProcessPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <section
+    ClassName="ProcessActivationSettings">
+    <SettingContract
+      Label="Process Activation"
+      ContractKey="PM_2B2D082C-CE77-4311-B7EA-E54B58125C13"
+      Domain="Setup"
+      UiHandlerAssemblyName="Robotmaster.Rise.dll"
+      UiHandlerBehaviorName="Robotmaster.Rise.Modules.PropertyViewer.PropertyViewerBehavior"
+      DataHandlerAssemblyName="null"
+      DataHandlerTypeName="null"
+      DataHandlerMethodName="null"
+      DataTypeAssemblyName="Robotmaster.Rise.dll"
+      DataTypeName="Robotmaster.Rise.BaseClasses.Settings.ExternalMenuData"
+      ImageUri="null"
+      ImageKey="f0c1" />
+    <CustomSettings>
+      <Cat
+        label="General Settings"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Process condition"
+          enable="true"
+          visible="true"
+          UID="{888E31B5-1CB5-4DB0-8EAB-711D9CA0E292}"
+          postVar="ProcessCondition"
+          defVal="4"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="The tooling process activation and deactivation condition." />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disable"
+              itemLabel="No tooling activation" />
+            <Item
+              index="3"
+              variableName="EveryPath"
+              itemLabel="Activate/Deactivate at every path." />
+            <Item
+              index="4"
+              variableName="EveryOperation"
+              itemLabel="Activate/Deactivate at every operation." />
+            <Item
+              index="5"
+              variableName="EveryProgram"
+              itemLabel="Activate/Deactivate at every program." />
+            <Item
+              index="6"
+              variableName="EveryToolChange"
+              itemLabel="Activate/Deactivate with tool change" />
+          </List>
+        </ListParam>
+      </Cat>
+      <Cat
+        label="Activation Settings"
+        enable="true"
+        visible="true">
+        <TxtParam
+          label="Process activation call"
+          enable="true"
+          visible="true"
+          UID="{9F37002E-0E13-4F0E-9B4F-C3141F80BB76}"
+          postVar="ProcessActivationMacro"
+          defVal="TOOLON">
+          <Desc>
+            <Text
+              line="The process activation call. The call is a macro that activates the tooling process." />
+          </Desc>
+        </TxtParam>
+        <ListParam
+          label="Process activation condition"
+          enable="true"
+          visible="true"
+          UID="{E1D37B32-B2EE-47A6-B308-37FD2623B181}"
+          postVar="ProcessActivationCondition"
+          defVal="0"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="FirstPoint"
+              itemLabel="At the first point" />
+            <Item
+              index="1"
+              variableName="FirstNonJointMove"
+              itemLabel="At the first non-joint move" />
+            <Item
+              index="2"
+              variableName="FirstPlunge"
+              itemLabel="At the first plunge" />
+            <Item
+              index="3"
+              variableName="FirstPointOfContact"
+              itemLabel="At the first point of contact" />
+            <Item
+              index="4"
+              variableName="FirstMoveInProcess"
+              itemLabel="At the first move in process" />
+          </List>
+        </ListParam>
+        <ListParam
+          label="Process activation index"
+          enable="true"
+          visible="true"
+          UID="{884AE171-ECD1-45B2-8FAD-0F47AECB79F4}"
+          postVar="ProcessActivationIndex"
+          defVal="0"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Before"
+              itemLabel="Before" />
+            <Item
+              index="2"
+              variableName="After"
+              itemLabel="After" />
+          </List>
+        </ListParam>
+      </Cat>
+      <Cat
+        label="Deactivation Settings"
+        enable="true"
+        visible="true">
+        <TxtParam
+          label="Process deactivation call"
+          enable="true"
+          visible="true"
+          UID="{181A3F7F-0933-4CC6-95BE-235E199D65E8}"
+          postVar="ProcessDeactivationMacro"
+          defVal="TOOLOFF">
+          <Desc>
+            <Text
+              line="The process deactivation call. The call is a macro that deactivates the tooling process." />
+          </Desc>
+        </TxtParam>
+        <ListParam
+          label="Process deactivation condition"
+          enable="true"
+          visible="true"
+          UID="{F06EA060-4771-482A-B1F4-37E67BE2357F}"
+          postVar="ProcessDeactivationCondition"
+          defVal="0"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="LastPoint"
+              itemLabel="At the last point" />
+            <Item
+              index="1"
+              variableName="LastNonJointMove"
+              itemLabel="At the last non-joint move" />
+            <Item
+              index="2"
+              variableName="LastRetract"
+              itemLabel="At the last retract" />
+            <Item
+              index="3"
+              variableName="LastPointOfContact"
+              itemLabel="At the last point of contact" />
+            <Item
+              index="4"
+              variableName="LastMoveInProcess"
+              itemLabel="At the last move in process" />
+          </List>
+        </ListParam>
+        <ListParam
+          label="Process deactivation index"
+          enable="true"
+          visible="true"
+          UID="{7B15AB22-A5A9-4F45-92ED-92144ECBE35E}"
+          postVar="ProcessDeactivationIndex"
+          defVal="2"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Before"
+              itemLabel="Before" />
+            <Item
+              index="2"
+              variableName="After"
+              itemLabel="After" />
+          </List>
+        </ListParam>
+      </Cat>
+    </CustomSettings>
+  </section>
+</ProcessPackage>

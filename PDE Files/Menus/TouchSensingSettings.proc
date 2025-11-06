@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProcessPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <section
+    ClassName="TouchSensingSettings">
+    <SettingContract
+      Label="Touch Sensing Settings"
+      ContractKey="PM_48cfb5d7-e517-4a41-96fe-cb795e698213"
+      Domain="Setup"
+      InvalidDomains="Operation|TaskOperation|Transition"
+      UiHandlerAssemblyName="Robotmaster.Rise.dll"
+      UiHandlerBehaviorName="Robotmaster.Rise.Modules.PropertyViewer.PropertyViewerBehavior"
+      DataHandlerAssemblyName="null"
+      DataHandlerTypeName="null"
+      DataHandlerMethodName="null"
+      DataTypeAssemblyName="Robotmaster.Rise.dll"
+      DataTypeName="Robotmaster.Rise.BaseClasses.Settings.ExternalMenuData"
+      ImageUri="null"
+      ImageKey="f0c1" />
+    <CustomSettings>
+      <Cat
+        label="General Settings"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Touch Search Output "
+          enable="true"
+          visible="true"
+          UID="{86142928-FC69-4389-978B-6EFE31417C40}"
+          postVar="TouchSearchOutput"
+          defVal="0"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="Specifies the search output." />
+            <Text
+              line="" />
+            <Text
+              line="- Search macro: CALL SEARCH_RM(P[3],P[4],20.0,5)" />
+            <Text
+              line="- Legacy Search Command: Search[-Z]" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="SearchMacro"
+              itemLabel="Search Macro" />
+            <Item
+              index="1"
+              variableName="SearchCommand"
+              itemLabel="Legacy Search Command" />
+          </List>
+        </ListParam>
+        <NumParam
+          label="Touch Search Registry"
+          enable="true"
+          visible="true"
+          UID="{32F1FB4A-5E09-49DF-8993-DA4C76D7F223}"
+          postVar="TouchSearchRegistry"
+          defVal="5"
+          type="integer">
+          <Desc>
+            <Text
+              line="Setting determines the Position Registry number used by the touch macro or search command to store a single touch offset." />
+            <Text
+              line="In the case of a multi-directional search, the registry number is incremented by 1 for the calculation combining the offset of each direction (only in welding)." />
+          </Desc>
+        </NumParam>
+      </Cat>
+      <Cat
+        label="Search Macro Settings"
+        enable="true"
+        visible="true">
+        <TxtParam
+          label="Touch Macro Name"
+          enable="true"
+          visible="true"
+          UID="{CFF59711-4A49-46EA-8542-754BF07D57CD}"
+          postVar="TouchMacroName"
+          defVal="SEARCH_RM">
+          <Desc>
+            <Text
+              line="Specifies the name of the touch macro." />
+            <Text
+              line="" />
+            <Text
+              line="Example of use:" />
+            <Text
+              line="SEARCH_RM(P[3],P[4],20.0,5)" />
+            <Text
+              line="" />
+            <Text
+              line="Arguments" />
+            <Text
+              line="AR[1] - search start P[] ;" />
+            <Text
+              line="AR[2] - search target P[] ;" />
+            <Text
+              line="AR[3] - search speed ;" />
+            <Text
+              line="AR[4] - result offset PR id ;" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+      <Cat
+        label="Legacy Search Command Settings"
+        enable="true"
+        visible="true">
+        <TxtParam
+          label="Schedule Number"
+          enable="true"
+          visible="true"
+          UID="{9D8C6B35-AE1D-4503-8228-AFA1BBCBC151}"
+          postVar="Schedule"
+          defVal="1,1">
+          <Desc>
+            <Text
+              line="Enter the Schedule number used with the 'Search Start' command" />
+            <Text
+              line="" />
+            <Text
+              line="Example: Search Start[1,1]" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+      <Cat
+        label="Touch Offset Usage Settings"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Touch Offset Method"
+          enable="true"
+          visible="true"
+          UID="{DCF60180-7C5F-4AFE-8B1D-075144AA99F8}"
+          postVar="TouchOffsetOutputType"
+          defVal="0"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="Determines the method for applying touch offsets to path points." />
+          </Desc>
+          <List>
+            <Item
+              index="2"
+              variableName="Disabled"
+              itemLabel="Disabled" />
+            <Item
+              index="0"
+              variableName="Sequential"
+              itemLabel="Sequential Offset" />
+            <Item
+              index="1"
+              variableName="Interpolated"
+              itemLabel="Interpolated Offset" />
+          </List>
+        </ListParam>
+        <NumParam
+          label="Interpolated Offset Register"
+          enable="true"
+          visible="true"
+          UID="{24F8D07D-A42F-4E67-A6ED-C88304DA4761}"
+          postVar="InterpolatedTouchRegister"
+          defVal="10"
+          type="integer">
+          <Desc>
+            <Text
+              line="Enter a Point register number not in use by your controller." />
+            <Text
+              line="" />
+            <Text
+              line="*Only used when Interpolated Touch Offset Method is selected." />
+            <Text
+              line="" />
+            <Text
+              line="PR[#] and PR[# + 1] are utilized for 'Interpolated Touch Method'" />
+            <Text
+              line="Example: PR[10] and PR[11] are used if value is set to 10" />
+            <Text
+              line="" />
+            <Text
+              line="Example: Touch Offset PR[10]" />
+          </Desc>
+        </NumParam>
+        <ListParam
+          label="Touch Interpolation Method"
+          enable="true"
+          visible="true"
+          UID="{9D16849E-9D2B-498E-9FAC-59AE282F654A}"
+          postVar="TouchInterpolation"
+          defVal="0"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="Set the Touch Interpolation Method. Allows selection between:  " />
+            <Text
+              line="- Linear: Linear interpolation between offsets." />
+            <Text
+              line="- Smooth Step: Smooth step interpolation between offsets." />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Linear"
+              itemLabel="Linear" />
+            <Item
+              index="1"
+              variableName="SmoothStep"
+              itemLabel="Smooth Step" />
+          </List>
+        </ListParam>
+      </Cat>
+    </CustomSettings>
+  </section>
+</ProcessPackage>

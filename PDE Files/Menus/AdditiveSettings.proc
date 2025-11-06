@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProcessPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <section
+    ClassName="AdditiveSettings">
+    <SettingContract
+      Label="Additive Settings"
+      ContractKey="PM_a8c3b7ad-46a3-49b1-b6d0-63bd12ee0e7b"
+      Domain="Setup"
+      InvalidDomains="Program|Operation|TaskOperation|Transition"
+      UiHandlerAssemblyName="Robotmaster.Rise.dll"
+      UiHandlerBehaviorName="Robotmaster.Rise.Modules.PropertyViewer.PropertyViewerBehavior"
+      DataHandlerAssemblyName="null"
+      DataHandlerTypeName="null"
+      DataHandlerMethodName="null"
+      DataTypeAssemblyName="Robotmaster.Rise.dll"
+      DataTypeName="Robotmaster.Rise.BaseClasses.Settings.ExternalMenuData"
+      ImageUri="null"
+      ImageKey="f0c1" />
+    <CustomSettings>
+      <Cat
+        label="Welding Parameters"
+        enable="true"
+        visible="true">
+        <TxtParam
+          label="Application Name"
+          enable="true"
+          visible="true"
+          UID="{6A519DB1-BDFC-41A0-B64D-05B6F66BBF70}"
+          postVar="ApplicationName"
+          defVal="ARC Welding Equipment Number : 1">
+          <Desc>
+            <Text
+              line="The application name to be output in the APPL header" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Weld ON command"
+          enable="true"
+          visible="true"
+          UID="{4621F95A-D271-403C-9044-584156E14F4E}"
+          postVar="WeldOnCommand"
+          defVal="Weld Start">
+          <Desc>
+            <Text
+              line="The command output at the start of the weld" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Weld OFF command"
+          enable="true"
+          visible="true"
+          UID="{56A8FFC9-8F95-49F0-9176-7F50C8B64F2D}"
+          postVar="WeldOffCommand"
+          defVal="Weld End">
+          <Desc>
+            <Text
+              line="The command output at the end of the weld" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Welding Start Schedule / Process"
+          enable="true"
+          visible="true"
+          UID="{10AFE856-37FD-4127-B4EC-FAF33677E448}"
+          postVar="WeldStartScheduleProcess"
+          defVal="1,1">
+          <Desc>
+            <Text
+              line="The weld schedule/process output with the weld on command" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Welding End Schedule / Process"
+          enable="true"
+          visible="true"
+          UID="{D3B18A4D-3E2C-4CF1-B237-6194DA8F3322}"
+          postVar="WeldEndScheduleProcess"
+          defVal="1,1">
+          <Desc>
+            <Text
+              line="The weld schedule/process output with the weld off command" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+    </CustomSettings>
+  </section>
+</ProcessPackage>

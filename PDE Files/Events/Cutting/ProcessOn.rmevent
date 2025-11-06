@@ -1,0 +1,68 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "Event",
+      "Id": "ProcessOn",
+      "EventSettings": {
+        "$id": "3",
+        "$type": "EventSettings",
+        "DataContractNameUid": {
+          "$type": "Guid",
+          "$value": "176c178d-4b53-431c-86ff-be50eb3cce8e"
+        },
+        "Descriptions": {
+          "$id": "4",
+          "$type": "List<string>",
+          "$values": [
+            ""
+          ]
+        },
+        "ToStringMethodBody": {
+          "$id": "5",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "CALL {ProcessActivationCommand}"
+        },
+        "ToCodeMethodBody": {
+          "$id": "6",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": ""
+        },
+        "ValidEventIndices": {
+          "$type": "EventIndices",
+          "$value": "Before, After"
+        }
+      },
+      "EventParameters": {
+        "$id": "7",
+        "$type": "List<object>",
+        "$values": [
+          {
+            "$id": "8",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "389a08f2-77ca-4474-a570-074b02fe73c1"
+            },
+            "DefaultValue": "TOOLON",
+            "Descriptions": {
+              "$id": "9",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "ProcessActivationCommand",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

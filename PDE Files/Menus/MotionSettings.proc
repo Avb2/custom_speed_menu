@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProcessPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <section
+    ClassName="MotionSettings">
+    <SettingContract
+      Label="Motion Settings"
+      ContractKey="DM_5b1e5969-3dc9-433e-ac9b-d6c15d5946cd"
+      Domain="Cell"
+      UiHandlerAssemblyName="Robotmaster.Rise.dll"
+      UiHandlerBehaviorName="Robotmaster.Rise.Modules.PropertyViewer.PropertyViewerBehavior"
+      DataHandlerAssemblyName="null"
+      DataHandlerTypeName="null"
+      DataHandlerMethodName="null"
+      DataTypeAssemblyName="Robotmaster.Rise.dll"
+      DataTypeName="Robotmaster.Rise.BaseClasses.Settings.ExternalMenuData"
+      ImageUri="null"
+      ImageKey="f0c1"
+      IsLocked="true" />
+    <CustomSettings>
+      <Cat
+        label="Joint motion (J)"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Termination"
+          enable="true"
+          visible="true"
+          UID="{605C2499-87E6-4BA4-BBE6-D3D216335747}"
+          postVar="JointMotionTerminationType"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="The termination type of joint motion." />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="NotSpecified"
+              itemLabel="Not specified" />
+            <Item
+              index="1"
+              variableName="Fine"
+              itemLabel="Fine" />
+            <Item
+              index="2"
+              variableName="Continuous"
+              itemLabel="Continuous" />
+          </List>
+        </ListParam>
+        <NumParam
+          label="CNT positioning path"
+          enable="true"
+          visible="true"
+          UID="{8F7DA7A2-EADA-45BE-8BE2-E7AA2B726C67}"
+          postVar="CntJointPositioningPathValue"
+          defVal="0"
+          type="integer">
+          <Desc>
+            <Text
+              line="The CNT joint positioning path value." />
+            <Text
+              line="When the CNT positioning path is specified, the robot approaches a target point but does not stop at the point and moves to the next point." />
+            <Text
+              line="How closely the robot must approach a target point can be defined by specifying a value from 0 to 100." />
+            <Text
+              line="The smaller the CNT value, the closer the robot gets to the point." />
+            <Text
+              line="Robotic syntax: CNT." />
+          </Desc>
+        </NumParam>
+        <NumParam
+          label="Joint speed"
+          enable="true"
+          visible="true"
+          UID="{80623EDA-C1BD-49AF-A6E4-A7DF17356F14}"
+          postVar="JointSpeed"
+          defVal="30"
+          type="integer">
+          <Desc>
+            <Text
+              line="The joint maximum speed (%). The joint speed ranges from 1 to 100%." />
+            <Text
+              line="The instruction specifies the percentage of the maximum speed during joint motion." />
+          </Desc>
+        </NumParam>
+        <BoolParam
+          label="Output acceleration and deceleration"
+          enable="true"
+          visible="true"
+          UID="{B1DEEC7F-C7D2-477D-817B-C83C914BBA79}"
+          postVar="IsJointAccelerationDecelerationEnabled"
+          defVal="false">
+          <Desc>
+            <Text
+              line="Enables or disables the joint acceleration/deceleration output for joint motion." />
+          </Desc>
+        </BoolParam>
+        <NumParam
+          label="Acceleration and deceleration"
+          enable="true"
+          visible="true"
+          UID="{3A9D5F1B-7DCF-467A-ABCC-D5E44D78AB22}"
+          postVar="JointAccelerationAndDecelerationForJointMotion"
+          defVal="100"
+          type="integer">
+          <Desc>
+            <Text
+              line="The joint acceleration and deceleration (%). The acceleration override value ranges from 0 to 150%." />
+            <Text
+              line="The instruction specifies the percentage of the acceleration/deceleration rate during joint motion." />
+            <Text
+              line="Robotic syntax: ACC." />
+          </Desc>
+        </NumParam>
+      </Cat>
+      <Cat
+        label="Linear motion (L)"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Termination"
+          enable="true"
+          visible="true"
+          UID="{33C6DE18-80D3-4DAB-B1B5-BE94AF4A5A2E}"
+          postVar="LinearMotionTerminationType"
+          defVal="2"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="The termination type of linear motion." />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="NotSpecified"
+              itemLabel="Not specified" />
+            <Item
+              index="1"
+              variableName="Fine"
+              itemLabel="Fine" />
+            <Item
+              index="2"
+              variableName="Continuous"
+              itemLabel="Continuous" />
+          </List>
+        </ListParam>
+        <NumParam
+          label="CNT positioning path"
+          enable="true"
+          visible="true"
+          UID="{BFEA76AF-E759-4A4E-9E43-B5F622125B1D}"
+          postVar="CntLinearPositioningPathValue"
+          defVal="100"
+          type="integer">
+          <Desc>
+            <Text
+              line="The CNT linear positioning path value." />
+            <Text
+              line="When the CNT positioning path is specified, the robot approaches a target point but does not stop at the point and moves to the next point." />
+            <Text
+              line="How closely the robot must approach a target point can be defined by specifying a value from 0 to 100." />
+            <Text
+              line="The smaller the CNT value, the closer the robot gets to the point." />
+            <Text
+              line="Robotic syntax: CNT." />
+          </Desc>
+        </NumParam>
+        <BoolParam
+          label="Output acceleration and deceleration"
+          enable="true"
+          visible="true"
+          UID="{3F7D65FC-F932-482A-9D5A-8E29C4D2193C}"
+          postVar="IsLinearAccelerationDecelerationEnabled"
+          defVal="false">
+          <Desc>
+            <Text
+              line="Enables or disables the joint acceleration/deceleration output for linear motion." />
+          </Desc>
+        </BoolParam>
+        <NumParam
+          label="Acceleration and deceleration"
+          enable="true"
+          visible="true"
+          UID="{BF119FD2-94DE-4985-8CFC-D262A0358DF9}"
+          postVar="JointAccelerationAndDecelerationForLinearMotion"
+          defVal="65"
+          type="integer">
+          <Desc>
+            <Text
+              line="The joint acceleration and deceleration (%). The acceleration override value ranges from 0 to 150%." />
+            <Text
+              line="The instruction specifies the percentage of the acceleration/deceleration rate during linear motion." />
+            <Text
+              line="Robotic syntax: ACC." />
+          </Desc>
+        </NumParam>
+      </Cat>
+      <Cat
+        label="Circular motion (C)"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Termination"
+          enable="true"
+          visible="true"
+          UID="{13AD4D98-8880-48BA-80D6-054AB6628572}"
+          postVar="CircularMotionTerminationType"
+          defVal="2"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="The termination type of circular motion." />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="NotSpecified"
+              itemLabel="Not specified" />
+            <Item
+              index="1"
+              variableName="Fine"
+              itemLabel="Fine" />
+            <Item
+              index="2"
+              variableName="Continuous"
+              itemLabel="Continuous" />
+          </List>
+        </ListParam>
+        <NumParam
+          label="CNT positioning path"
+          enable="true"
+          visible="true"
+          UID="{234DE74F-BF07-4E39-B132-9893C60CE6DD}"
+          postVar="CntCircularPositioningPathValue"
+          defVal="100"
+          type="integer">
+          <Desc>
+            <Text
+              line="The CNT circular positioning path value." />
+            <Text
+              line="When the CNT positioning path is specified, the robot approaches a target point but does not stop at the point and moves to the next point." />
+            <Text
+              line="How closely the robot must approach a target point can be defined by specifying a value from 0 to 100." />
+            <Text
+              line="The smaller the CNT value, the closer the robot gets to the point." />
+            <Text
+              line="Robotic syntax: CNT." />
+          </Desc>
+        </NumParam>
+        <BoolParam
+          label="Output acceleration and deceleration"
+          enable="true"
+          visible="true"
+          UID="{DDD11470-88A3-489F-BBE4-AF714EED8AEC}"
+          postVar="IsCircularAccelerationDecelerationEnabled"
+          defVal="false">
+          <Desc>
+            <Text
+              line="Enables or disables the joint acceleration/deceleration output for circular motion." />
+          </Desc>
+        </BoolParam>
+        <NumParam
+          label="Acceleration and deceleration"
+          enable="true"
+          visible="true"
+          UID="{FC7556FD-C681-405C-BE11-9C0CC843D72E}"
+          postVar="JointAccelerationAndDecelerationForCircularMotion"
+          defVal="65"
+          type="integer">
+          <Desc>
+            <Text
+              line="The joint acceleration and deceleration (%). The acceleration override value ranges from 0 to 150%." />
+            <Text
+              line="The instruction specifies the percentage of the acceleration/deceleration rate during circular motion." />
+            <Text
+              line="Robotic syntax: ACC." />
+          </Desc>
+        </NumParam>
+      </Cat>
+      <Cat
+        label="Additional motion parameters"
+        enable="true"
+        visible="true">
+        <BoolParam
+          label="Output PTH motion"
+          enable="true"
+          visible="true"
+          UID="{FE9C393A-7377-4A3E-B29C-043FA0E213D3}"
+          postVar="IsPthMotionEnabled"
+          defVal="false">
+          <Desc>
+            <Text
+              line="Enables or disables the PTH motion output." />
+            <Text
+              line="The instruction is used to improve the performance of continuous motion by forcing the robot to maintain the original path." />
+            <Text
+              line="The instruction can only be used with continuous (CNT) move." />
+            <Text
+              line="Robotic syntax: PTH." />
+          </Desc>
+        </BoolParam>
+        <BoolParam
+          label="Output minimum rotation"
+          enable="true"
+          visible="true"
+          UID="{2B7D9635-783C-4D15-B12B-0B90321746D0}"
+          postVar="IsMinimumRotationEnabled"
+          defVal="false">
+          <Desc>
+            <Text
+              line="Enables or disables the minimum rotation output." />
+            <Text
+              line="The MROT motion modifier instructs the robot to take the minimum rotation path considering soft joint limits." />
+            <Text
+              line="Robotic syntax: MROT." />
+          </Desc>
+        </BoolParam>
+        <BoolParam
+          label="Output coordinated motion"
+          enable="true"
+          visible="true"
+          UID="{D53A7C2D-62D4-43B6-A70B-185622DBCC8B}"
+          postVar="IsCoordinatedMotionEnabled"
+          defVal="false">
+          <Desc>
+            <Text
+              line="Enables or disables the coordinated motion output." />
+            <Text
+              line="The instruction ensures TCP path and speed maintenance in coordinated motions by taking into account coordinated groups/axes." />
+            <Text
+              line="Robotic syntax: COORD." />
+          </Desc>
+        </BoolParam>
+      </Cat>
+    </CustomSettings>
+  </section>
+</ProcessPackage>

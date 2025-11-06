@@ -1,0 +1,68 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "Event",
+      "Id": "GripperOpen",
+      "EventSettings": {
+        "$id": "3",
+        "$type": "EventSettings",
+        "DataContractNameUid": {
+          "$type": "Guid",
+          "$value": "f4f75b4e-f36f-47ba-882c-6b228fe89025"
+        },
+        "Descriptions": {
+          "$id": "4",
+          "$type": "List<string>",
+          "$values": [
+            ""
+          ]
+        },
+        "ToStringMethodBody": {
+          "$id": "5",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "CALL {Command}"
+        },
+        "ToCodeMethodBody": {
+          "$id": "6",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "CALL {Command}"
+        },
+        "ValidEventIndices": {
+          "$type": "EventIndices",
+          "$value": "Before, After"
+        }
+      },
+      "EventParameters": {
+        "$id": "7",
+        "$type": "List<object>",
+        "$values": [
+          {
+            "$id": "8",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "e0b2c37d-4606-426f-8a23-820978983ba2"
+            },
+            "DefaultValue": "GripperOpen()",
+            "Descriptions": {
+              "$id": "9",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "Command",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "Event",
+      "Id": "PlasmaProcess",
+      "EventSettings": {
+        "$id": "3",
+        "$type": "EventSettings",
+        "DataContractNameUid": {
+          "$type": "Guid",
+          "$value": "a46ba2b8-1bc6-4daa-a556-84971b986011"
+        },
+        "Descriptions": {
+          "$id": "4",
+          "$type": "List<string>",
+          "$values": [
+            ""
+          ]
+        },
+        "ToStringMethodBody": {
+          "$id": "5",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{(AsProgramCall ? \"CALL \": \"\")}{PlasmaProcessCommand}{(string.IsNullOrEmpty(PlasmaProcessArguments) ? \"\" : \"(\" + string.Join(\"\", PlasmaProcessArguments) + \")\")}"
+        },
+        "ToCodeMethodBody": {
+          "$id": "6",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{(AsProgramCall ? \"CALL \": \"\")}{PlasmaProcessCommand}{(string.IsNullOrEmpty(PlasmaProcessArguments) ? \"\" : \"(\" + string.Join(\"\", PlasmaProcessArguments) + \")\")}"
+        },
+        "ValidEventIndices": {
+          "$type": "EventIndices",
+          "$value": "After"
+        }
+      },
+      "EventParameters": {
+        "$id": "7",
+        "$type": "List<object>",
+        "$values": [
+          {
+            "$id": "8",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "013050de-32eb-4861-b8d9-c8e82fd4f691"
+            },
+            "DefaultValue": "SET_PROCESS",
+            "Descriptions": {
+              "$id": "9",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "PlasmaProcessCommand",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "10",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "acb2e8ab-b56b-4042-abbb-7c1c03a14d11"
+            },
+            "DefaultValue": "",
+            "Descriptions": {
+              "$id": "11",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "PlasmaProcessArguments",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "12",
+            "$type": "BooleanEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "d43064b0-6970-478e-ad7a-3b26a2d126fb"
+            },
+            "DefaultValue": {
+              "$type": "bool",
+              "$value": true
+            },
+            "Descriptions": {
+              "$id": "13",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "AsProgramCall",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

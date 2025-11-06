@@ -1,0 +1,113 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "Event",
+      "Id": "AvcOn",
+      "EventSettings": {
+        "$id": "3",
+        "$type": "EventSettings",
+        "DataContractNameUid": {
+          "$type": "Guid",
+          "$value": "b8bfdfd0-85ff-4b26-85fa-f7b1e06e291e"
+        },
+        "Descriptions": {
+          "$id": "4",
+          "$type": "List<string>",
+          "$values": [
+            ""
+          ]
+        },
+        "ToStringMethodBody": {
+          "$id": "5",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{(AsProgramCall ? \"CALL \": \"\")}{AvcOnCommand}{(string.IsNullOrEmpty(AvcOnArguments) ? \"\" : \"(\" + string.Join(\"\", AvcOnArguments) + \")\")}"
+        },
+        "ToCodeMethodBody": {
+          "$id": "6",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{(AsProgramCall ? \"CALL \": \"\")}{AvcOnCommand}{(string.IsNullOrEmpty(AvcOnArguments) ? \"\" : \"(\" + string.Join(\"\", AvcOnArguments) + \")\")}"
+        },
+        "ValidEventIndices": {
+          "$type": "EventIndices",
+          "$value": "After"
+        }
+      },
+      "EventParameters": {
+        "$id": "7",
+        "$type": "List<object>",
+        "$values": [
+          {
+            "$id": "8",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "8782a968-2c66-4a16-8b25-3ca501c7ece7"
+            },
+            "DefaultValue": "CALL PLASMA_AVC_ON",
+            "Descriptions": {
+              "$id": "9",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "AvcOnCommand",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "10",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "1ad0be16-8849-41ed-a683-ebeb5b080b41"
+            },
+            "DefaultValue": "",
+            "Descriptions": {
+              "$id": "11",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "AvcOnArguments",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "12",
+            "$type": "BooleanEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "d3126d3c-1889-486f-b0ab-d1e549f671bf"
+            },
+            "DefaultValue": {
+              "$type": "bool",
+              "$value": false
+            },
+            "Descriptions": {
+              "$id": "13",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "AsProgramCall",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

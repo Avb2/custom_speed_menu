@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProcessPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <section
+    ClassName="WeldingSettings">
+    <SettingContract
+      Label="Welding Settings"
+      ContractKey="PM_2b4007aa-47fd-4302-a6e4-17f40ce567e7"
+      Domain="Setup"
+      UiHandlerAssemblyName="Robotmaster.Rise.dll"
+      UiHandlerBehaviorName="Robotmaster.Rise.Modules.PropertyViewer.PropertyViewerBehavior"
+      DataHandlerAssemblyName="null"
+      DataHandlerTypeName="null"
+      DataHandlerMethodName="null"
+      DataTypeAssemblyName="Robotmaster.Rise.dll"
+      DataTypeName="Robotmaster.Rise.BaseClasses.Settings.ExternalMenuData"
+      ImageUri="null"
+      ImageKey="f0c1" />
+    <CustomSettings>
+      <Cat
+        label="General Welding Parameters"
+        enable="true"
+        visible="true">
+        <TxtParam
+          label="Application Name"
+          enable="true"
+          visible="true"
+          UID="{2BA8B40E-0FF1-4EF2-8597-C9CFB5425B0B}"
+          postVar="ApplicationName"
+          defVal="ARC Welding Equipment Number : 1">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Arc Start Command"
+          enable="true"
+          visible="true"
+          UID="{4AE18991-E994-4CFC-BD8E-34B1D97B82BF}"
+          postVar="ArcStartCommand"
+          defVal="Weld Start">
+          <Desc>
+            <Text
+              line="Enter the command for Arc On" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Arc End Command"
+          enable="true"
+          visible="true"
+          UID="{4EC88985-ED12-4F7A-B11F-88FBABB37DBA}"
+          postVar="ArcEndCommand"
+          defVal="Weld End">
+          <Desc>
+            <Text
+              line="Enter the command for Arc Off" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="Start Schedule"
+          enable="true"
+          visible="true"
+          UID="{11091688-46C5-45A0-B076-2EDB2911290D}"
+          postVar="StartSchedule"
+          defVal="1,1">
+          <Desc>
+            <Text
+              line="Enter the Weld Start Schedule parameters" />
+            <Text
+              line="Weld Start[#,#]" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="End Schedule"
+          enable="true"
+          visible="true"
+          UID="{12554C8E-0D65-4534-83A9-11F0196C721E}"
+          postVar="EndSchedule"
+          defVal="1,1">
+          <Desc>
+            <Text
+              line="Enter the Weld End Schedule parameters" />
+            <Text
+              line="Weld End[#,#]" />
+          </Desc>
+        </TxtParam>
+      </Cat>
+      <Cat
+        label="Weaving Parameters"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Weaving"
+          enable="true"
+          visible="true"
+          UID="{D89625C4-9607-427D-ABEA-D8873C18E02F}"
+          postVar="IsWeavingEnabled"
+          defVal="0"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="Enable or Disable Weaving command output" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disabled"
+              itemLabel="Disabled" />
+            <Item
+              index="1"
+              variableName="Enabled"
+              itemLabel="Enabled" />
+          </List>
+        </ListParam>
+        <TxtParam
+          label="Start Command"
+          enable="true"
+          visible="true"
+          UID="{A37FE29E-FE15-4824-AC19-1015096B6C21}"
+          postVar="WeavingStartCommand"
+          defVal="Weave">
+          <Desc>
+            <Text
+              line="Enter the command for Weave Start" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="End Command"
+          enable="true"
+          visible="true"
+          UID="{A8ABCA2A-D7BB-41FC-A424-081A1F90F85D}"
+          postVar="WeavingEndCommand"
+          defVal="Weave End">
+          <Desc>
+            <Text
+              line="Enter the command for Weave End" />
+          </Desc>
+        </TxtParam>
+        <NumParam
+          label="Schedule Number"
+          enable="true"
+          visible="true"
+          UID="{03B0EC69-6536-40C1-B6EA-97F374B75111}"
+          postVar="WeaveSchedule"
+          defVal="1"
+          type="integer">
+          <Desc>
+            <Text
+              line="Enter the Weave Schedule Number" />
+            <Text
+              line="Example: Weave Sine[#]" />
+          </Desc>
+        </NumParam>
+        <ListParam
+          label="Pattern"
+          enable="true"
+          visible="true"
+          UID="{DAFC1BEC-10A6-4B8A-8C9F-A70FEA75A09D}"
+          postVar="WeavePattern"
+          defVal="0"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="Select the Weave Pattern" />
+            <Text
+              line="Example: Weave Sine[1]" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Sine"
+              itemLabel="Sine" />
+            <Item
+              index="1"
+              variableName="Circle"
+              itemLabel="Circle" />
+            <Item
+              index="2"
+              variableName="Figure8"
+              itemLabel="Figure 8" />
+          </List>
+        </ListParam>
+      </Cat>
+      <Cat
+        label="Seam Tracking Parameters"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Seam Tracking"
+          enable="true"
+          visible="true"
+          UID="{FFFEEE2E-11D1-43E5-83E8-EE6C83514428}"
+          postVar="IsSeamTrackingEnabled"
+          defVal="0"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="Enable or Disable Seam tracking command output" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disabled"
+              itemLabel="Disabled" />
+            <Item
+              index="1"
+              variableName="Enabled"
+              itemLabel="Enabled" />
+          </List>
+        </ListParam>
+        <TxtParam
+          label="Start Command"
+          enable="true"
+          visible="true"
+          UID="{27B6B2BD-7C1C-4B31-B18A-92B9738DE7F5}"
+          postVar="SeamTrackingStartCommand"
+          defVal="Track">
+          <Desc>
+            <Text
+              line="Enter the command for Seam Track Start" />
+          </Desc>
+        </TxtParam>
+        <TxtParam
+          label="End Command"
+          enable="true"
+          visible="true"
+          UID="{D7346611-EFBD-468C-9787-B3F22DE11EDE}"
+          postVar="SeamTrackingEndCommand"
+          defVal="Track End">
+          <Desc>
+            <Text
+              line="Enter the command for Seam Track End" />
+          </Desc>
+        </TxtParam>
+        <NumParam
+          label="Schedule Number"
+          enable="true"
+          visible="true"
+          UID="{04B0E279-6549-4579-9D93-F269A3AA6260}"
+          postVar="SeamTrackingSchedule"
+          defVal="1"
+          type="integer">
+          <Desc>
+            <Text
+              line="Enter the Schedule Number" />
+            <Text
+              line="TAST[#]" />
+          </Desc>
+        </NumParam>
+        <TxtParam
+          label="Root Pass Memorization (RPM)"
+          enable="true"
+          visible="true"
+          UID="{73B97421-8604-4BA7-B230-3AE80165C9ED}"
+          postVar="RpmCommand"
+          defVal="RPM">
+          <Desc>
+            <Text
+              line="Enter the Command for Root Pass Memorization" />
+            <Text
+              line="RPM[1]" />
+          </Desc>
+        </TxtParam>
+        <NumParam
+          label="RPM Register"
+          enable="true"
+          visible="true"
+          UID="{02165428-F4E5-4D0F-A46A-0A0D8CA3ADDB}"
+          postVar="RpmRegister"
+          defVal="1"
+          type="integer">
+          <Desc>
+            <Text
+              line="RPM[#]" />
+          </Desc>
+        </NumParam>
+      </Cat>
+      <Cat
+        label="Macro Settings"
+        enable="true"
+        visible="true">
+        <BoolParam
+          label="Enable macro program call output"
+          enable="true"
+          visible="true"
+          UID="{9CA92360-4FA6-4E3F-8CFE-BA5BB6FD7E0F}"
+          postVar="IsMacroNameCallEnabled"
+          defVal="true">
+          <Desc>
+            <Text
+              line="For macro operations; macros will be output as program calls." />
+          </Desc>
+        </BoolParam>
+      </Cat>
+    </CustomSettings>
+  </section>
+</ProcessPackage>

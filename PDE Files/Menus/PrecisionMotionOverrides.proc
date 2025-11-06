@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProcessPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <section
+    ClassName="PrecisionMotionOverrides">
+    <SettingContract
+      Label="Precision Motion Overrides"
+      ContractKey="PM_3d98449e-6230-41f7-bf0e-36375ee437dc"
+      Domain="Setup"
+      UiHandlerAssemblyName="Robotmaster.Rise.dll"
+      UiHandlerBehaviorName="Robotmaster.Rise.Modules.PropertyViewer.PropertyViewerBehavior"
+      DataHandlerAssemblyName="null"
+      DataHandlerTypeName="null"
+      DataHandlerMethodName="null"
+      DataTypeAssemblyName="Robotmaster.Rise.dll"
+      DataTypeName="Robotmaster.Rise.BaseClasses.Settings.ExternalMenuData"
+      ImageUri="null"
+      ImageKey="f0c1" />
+    <CustomSettings>
+      <Cat
+        label="Plunge Moves"
+        enable="true"
+        visible="true">
+        <NumParam
+          label="Delay time"
+          enable="true"
+          visible="true"
+          UID="{1C3C61F5-21E4-40E4-A1B5-84CB05DE06E0}"
+          postVar="PlungeDelayTime"
+          defVal="0"
+          type="double">
+          <Desc>
+            <Text
+              line="The time (in seconds) the robot should remain still after a plunge move." />
+            <Text
+              line="Can be output even if the motion override is disabled." />
+            <Text
+              line="Set to 0 to disable delay output." />
+            <Text
+              line="Robotic syntax: WAIT" />
+          </Desc>
+        </NumParam>
+        <BoolParam
+          label="Enable Motion Override"
+          enable="true"
+          visible="true"
+          UID="{060ADB39-A667-4800-8D00-A7E88BEC02E0}"
+          postVar="EnablePlungeMotionOverride"
+          defVal="true">
+          <Desc>
+            <Text
+              line="When enabled, motion settings for plunge moves can be overridden." />
+          </Desc>
+        </BoolParam>
+        <ListParam
+          label="Termination"
+          enable="true"
+          visible="true"
+          UID="{9DC949AF-C4AA-4ECC-BC13-F6652AEF38CC}"
+          postVar="PlungeTerminationOverride"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="NotSpecified"
+              itemLabel="Not Specified" />
+            <Item
+              index="1"
+              variableName="Fine"
+              itemLabel="Fine" />
+            <Item
+              index="2"
+              variableName="Continuous"
+              itemLabel="Continuous" />
+          </List>
+        </ListParam>
+        <NumParam
+          label="CNT positioning path"
+          enable="true"
+          visible="true"
+          UID="{6BD6F0EC-93AB-4C02-9FDA-3458A5E996C6}"
+          postVar="PlungeCntPositioningPathOverride"
+          defVal="5"
+          type="integer">
+          <Desc>
+            <Text
+              line="When the CNT positioning path is specified, the robot approaches a target point but does not stop at the point and moves to the next point." />
+            <Text
+              line="How closely the robot must approach a target point can be defined by specifying a value from 0 to 100." />
+            <Text
+              line="The smaller the CNT value, the closer the robot gets to the point." />
+            <Text
+              line="Robotic syntax: CNT." />
+          </Desc>
+        </NumParam>
+        <NumParam
+          label="Acceleration and deceleration"
+          enable="true"
+          visible="true"
+          UID="{A512BE08-5370-43F6-BCF1-8E730817C339}"
+          postVar="PlungeAccelerationAndDecelerationOverride"
+          defVal="0"
+          type="integer">
+          <Desc>
+            <Text
+              line="The acceleration and deceleration (%). The acceleration override value ranges from 1 to 150%." />
+            <Text
+              line="The instruction specifies the percentage of the acceleration/deceleration rate during linear motion." />
+            <Text
+              line="Set to 0% to disable the acceleration and deceleration override." />
+            <Text
+              line="Robotic syntax: ACC." />
+          </Desc>
+        </NumParam>
+      </Cat>
+      <Cat
+        label="Sharp Turns"
+        enable="true"
+        visible="true">
+        <NumParam
+          label="Delay time"
+          enable="true"
+          visible="true"
+          UID="{6BCD8F54-ED6B-4EA3-871D-8A498F57C549}"
+          postVar="SharpTurnDelayTime"
+          defVal="0"
+          type="double">
+          <Desc>
+            <Text
+              line="The time (in seconds) the robot should remain still after a sharp turn." />
+            <Text
+              line="Can be output even if the motion override is disabled." />
+            <Text
+              line="Set to 0 to disable delay output." />
+            <Text
+              line="Robotic syntax: WAIT" />
+          </Desc>
+        </NumParam>
+        <BoolParam
+          label="Enable Motion Override"
+          enable="true"
+          visible="true"
+          UID="{2101B6C0-5DB4-4E9A-921C-09BE2D12CC38}"
+          postVar="EnableSharpTurnMotionOverride"
+          defVal="false">
+          <Desc>
+            <Text
+              line="When enabled, motion settings for sharp turn moves can be overridden." />
+          </Desc>
+        </BoolParam>
+        <NumParam
+          label="Sharp turn angle"
+          enable="true"
+          visible="true"
+          UID="{C51DB5E4-22D7-4813-AAB6-84836C3CDF2A}"
+          postVar="SharpTurnAngle"
+          defVal="90"
+          type="double">
+          <Desc>
+            <Text
+              line="The minimum angle change, in degrees, between points along a path for a turn to be considered sharp." />
+            <Text
+              line="A larger values means a sharper turn." />
+          </Desc>
+        </NumParam>
+        <ListParam
+          label="Termination"
+          enable="true"
+          visible="true"
+          UID="{68D26F41-9A01-44D7-B39F-C11590B6DB79}"
+          postVar="SharpTurnTerminationOverride"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="NotSpecified"
+              itemLabel="Not Specified" />
+            <Item
+              index="1"
+              variableName="Fine"
+              itemLabel="Fine" />
+            <Item
+              index="2"
+              variableName="Continuous"
+              itemLabel="Continuous" />
+          </List>
+        </ListParam>
+        <NumParam
+          label="CNT positioning path"
+          enable="true"
+          visible="true"
+          UID="{EC6C5F20-3EAD-40D2-BBE2-DA8A507898CD}"
+          postVar="SharpTurnCntPositioningPathOverride"
+          defVal="5"
+          type="integer">
+          <Desc>
+            <Text
+              line="When the CNT positioning path is specified, the robot approaches a target point but does not stop at the point and moves to the next point." />
+            <Text
+              line="How closely the robot must approach a target point can be defined by specifying a value from 0 to 100." />
+            <Text
+              line="The smaller the CNT value, the closer the robot gets to the point." />
+            <Text
+              line="Robotic syntax: CNT." />
+          </Desc>
+        </NumParam>
+        <NumParam
+          label="Acceleration and deceleration"
+          enable="true"
+          visible="true"
+          UID="{2683541A-6282-418B-AD3F-E1A3E4C48D4A}"
+          postVar="SharpTurnAccelerationAndDecelerationOverride"
+          defVal="0"
+          type="integer">
+          <Desc>
+            <Text
+              line="The acceleration and deceleration (%). The acceleration override value ranges from 1 to 150%." />
+            <Text
+              line="The instruction specifies the percentage of the acceleration/deceleration rate during linear motion." />
+            <Text
+              line="Set to 0% to disable the acceleration and deceleration override." />
+            <Text
+              line="Robotic syntax: ACC." />
+          </Desc>
+        </NumParam>
+      </Cat>
+      <Cat
+        label="Small Moves"
+        enable="true"
+        visible="true">
+        <NumParam
+          label="Delay Time"
+          enable="true"
+          visible="true"
+          UID="{0168114C-7D77-4D3F-90DF-84BC439EE2D8}"
+          postVar="SmallMoveDelayTime"
+          defVal="0"
+          type="double">
+          <Desc>
+            <Text
+              line="The time (in seconds) the robot should remain still after a small move." />
+            <Text
+              line="Only applies to linear moves." />
+            <Text
+              line="Can be output even if the motion override is disabled." />
+            <Text
+              line="Set to 0 to disable delay output." />
+            <Text
+              line="Robotic syntax: WAIT" />
+          </Desc>
+        </NumParam>
+        <BoolParam
+          label="Enable Motion Override"
+          enable="true"
+          visible="true"
+          UID="{D6EFE817-736C-4650-BC7F-93CF4E05C00D}"
+          postVar="EnableSmallMoveMotionOverride"
+          defVal="false">
+          <Desc>
+            <Text
+              line="When enabled, motion settings for small moves can be overridden." />
+            <Text
+              line="Only applies to linear moves." />
+          </Desc>
+        </BoolParam>
+        <NumParam
+          label="Small move distance"
+          enable="true"
+          visible="true"
+          UID="{89184A1C-C8B6-46D5-9317-430A350FE3AC}"
+          postVar="SmallMoveDistance"
+          defVal="0"
+          type="double">
+          <Desc>
+            <Text
+              line="The minimum distance, in millimeters, between points along a path for a move to be considered small." />
+          </Desc>
+        </NumParam>
+        <ListParam
+          label="Termination"
+          enable="true"
+          visible="true"
+          UID="{A9A978F2-44BC-4787-BEE1-28F447A63E72}"
+          postVar="SmallMoveTerminationOverride"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="NotSpecified"
+              itemLabel="Not Specified" />
+            <Item
+              index="1"
+              variableName="Fine"
+              itemLabel="Fine" />
+            <Item
+              index="2"
+              variableName="Continuous"
+              itemLabel="Continuous" />
+          </List>
+        </ListParam>
+        <NumParam
+          label="CNT positioning path"
+          enable="true"
+          visible="true"
+          UID="{4E2FA5E3-5FC9-41DE-B6C3-9A5869D41C5C}"
+          postVar="SmallMoveCntPositioningPathOverride"
+          defVal="5"
+          type="integer">
+          <Desc>
+            <Text
+              line="When the CNT positioning path is specified, the robot approaches a target point but does not stop at the point and moves to the next point." />
+            <Text
+              line="How closely the robot must approach a target point can be defined by specifying a value from 0 to 100." />
+            <Text
+              line="The smaller the CNT value, the closer the robot gets to the point." />
+            <Text
+              line="Robotic syntax: CNT." />
+          </Desc>
+        </NumParam>
+        <NumParam
+          label="Acceleration and deceleration"
+          enable="true"
+          visible="true"
+          UID="{EB9FD97F-C6E6-4D5E-8EE1-7E25351D3B7B}"
+          postVar="SmallMoveAccelerationAndDecelerationOverride"
+          defVal="0"
+          type="integer">
+          <Desc>
+            <Text
+              line="The acceleration and deceleration (%). The acceleration override value ranges from 1 to 150%." />
+            <Text
+              line="The instruction specifies the percentage of the acceleration/deceleration rate during linear motion." />
+            <Text
+              line="Set to 0% to disable the acceleration and deceleration override." />
+            <Text
+              line="Robotic syntax: ACC." />
+          </Desc>
+        </NumParam>
+      </Cat>
+    </CustomSettings>
+  </section>
+</ProcessPackage>

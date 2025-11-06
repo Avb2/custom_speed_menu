@@ -1,0 +1,89 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "Event",
+      "Id": "AdditiveOn",
+      "EventSettings": {
+        "$id": "3",
+        "$type": "EventSettings",
+        "DataContractNameUid": {
+          "$type": "Guid",
+          "$value": "4cef27fd-3333-43a1-a26d-41b216b75f71"
+        },
+        "Descriptions": {
+          "$id": "4",
+          "$type": "List<string>",
+          "$values": [
+            ""
+          ]
+        },
+        "ToStringMethodBody": {
+          "$id": "5",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{AdditiveOnCommand}[{AdditiveScheduleProcess}]"
+        },
+        "ToCodeMethodBody": {
+          "$id": "6",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{AdditiveOnCommand}[{AdditiveScheduleProcess}]"
+        },
+        "ValidEventIndices": {
+          "$type": "EventIndices",
+          "$value": "Before, After"
+        }
+      },
+      "EventParameters": {
+        "$id": "7",
+        "$type": "List<object>",
+        "$values": [
+          {
+            "$id": "8",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "906d75c4-fbce-483e-b5ba-626a9d2d4b10"
+            },
+            "DefaultValue": "Weld Start",
+            "Descriptions": {
+              "$id": "9",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "AdditiveOnCommand",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "10",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "856f0676-6cb4-4a60-a429-eda6c80b806d"
+            },
+            "DefaultValue": "1,1",
+            "Descriptions": {
+              "$id": "11",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "AdditiveScheduleProcess",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

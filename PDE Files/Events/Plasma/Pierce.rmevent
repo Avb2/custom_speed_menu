@@ -1,0 +1,113 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "Event",
+      "Id": "Pierce",
+      "EventSettings": {
+        "$id": "3",
+        "$type": "EventSettings",
+        "DataContractNameUid": {
+          "$type": "Guid",
+          "$value": "de301720-e0ff-4253-9a35-5bdccb3126bd"
+        },
+        "Descriptions": {
+          "$id": "4",
+          "$type": "List<string>",
+          "$values": [
+            ""
+          ]
+        },
+        "ToStringMethodBody": {
+          "$id": "5",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{(AsProgramCall ? \"CALL \": \"\")}{PierceCommand}{(string.IsNullOrEmpty(PierceArguments) ? \"\" : \"(\" + string.Join(\"\", PierceArguments)+ \")\")}"
+        },
+        "ToCodeMethodBody": {
+          "$id": "6",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{(AsProgramCall ? \"CALL \": \"\")}{PierceCommand}{(string.IsNullOrEmpty(PierceArguments) ? \"\" : \"(\" + string.Join(\"\", PierceArguments)+ \")\")}"
+        },
+        "ValidEventIndices": {
+          "$type": "EventIndices",
+          "$value": "After"
+        }
+      },
+      "EventParameters": {
+        "$id": "7",
+        "$type": "List<object>",
+        "$values": [
+          {
+            "$id": "8",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "33b9411a-69d1-41bb-9c25-b9a73aaa6400"
+            },
+            "DefaultValue": "WAIT",
+            "Descriptions": {
+              "$id": "9",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "PierceCommand",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "10",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "a51ee6b5-2b4f-48a2-a44c-a4302f85b0e8"
+            },
+            "DefaultValue": "1.000",
+            "Descriptions": {
+              "$id": "11",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "PierceArguments",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "12",
+            "$type": "BooleanEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "1be29840-50d4-4c1a-820f-11cd97d7eea1"
+            },
+            "DefaultValue": {
+              "$type": "bool",
+              "$value": false
+            },
+            "Descriptions": {
+              "$id": "13",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "AsProgramCall",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

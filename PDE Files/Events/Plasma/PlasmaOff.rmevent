@@ -1,0 +1,113 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "Event",
+      "Id": "PlasmaOff",
+      "EventSettings": {
+        "$id": "3",
+        "$type": "EventSettings",
+        "DataContractNameUid": {
+          "$type": "Guid",
+          "$value": "2775b322-a59a-41a4-8165-7df228a12f68"
+        },
+        "Descriptions": {
+          "$id": "4",
+          "$type": "List<string>",
+          "$values": [
+            ""
+          ]
+        },
+        "ToStringMethodBody": {
+          "$id": "5",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{(AsProgramCall ? \"CALL \": \"\")}{PlasmaOffCommand}{(string.IsNullOrEmpty(PlasmaOffArguments) ? \"\" : \"(\" + string.Join(\"\", PlasmaOffArguments) + \")\")}"
+        },
+        "ToCodeMethodBody": {
+          "$id": "6",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{(AsProgramCall ? \"CALL \": \"\")}{PlasmaOffCommand}{(string.IsNullOrEmpty(PlasmaOffArguments) ? \"\" : \"(\" + string.Join(\"\", PlasmaOffArguments) + \")\")}"
+        },
+        "ValidEventIndices": {
+          "$type": "EventIndices",
+          "$value": "After"
+        }
+      },
+      "EventParameters": {
+        "$id": "7",
+        "$type": "List<object>",
+        "$values": [
+          {
+            "$id": "8",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "b5a07975-13a6-4cd7-b47d-58e63e22e358"
+            },
+            "DefaultValue": "PLASMA_OFF",
+            "Descriptions": {
+              "$id": "9",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "PlasmaOffCommand",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "10",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "7359a05d-0752-49c4-b2b5-7698e003ae42"
+            },
+            "DefaultValue": "",
+            "Descriptions": {
+              "$id": "11",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "PlasmaOffArguments",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "12",
+            "$type": "BooleanEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "f91da43c-c33d-44ce-956d-fbc85b95c8b0"
+            },
+            "DefaultValue": {
+              "$type": "bool",
+              "$value": true
+            },
+            "Descriptions": {
+              "$id": "13",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "AsProgramCall",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "Event",
+      "Id": "PlasmaTransfer",
+      "EventSettings": {
+        "$id": "3",
+        "$type": "EventSettings",
+        "DataContractNameUid": {
+          "$type": "Guid",
+          "$value": "c45ceacf-7e44-4fff-9758-1794c20056d5"
+        },
+        "Descriptions": {
+          "$id": "4",
+          "$type": "List<string>",
+          "$values": [
+            ""
+          ]
+        },
+        "ToStringMethodBody": {
+          "$id": "5",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{(AsProgramCall ? \"CALL \": \"\")}{PlasmaTransferCommand}{(string.IsNullOrEmpty(PlasmaTransferArguments) ? \"\" : \"(\" + string.Join(\"\", PlasmaTransferArguments) + \")\")}"
+        },
+        "ToCodeMethodBody": {
+          "$id": "6",
+          "$type": "SingleLineEventMethodBody",
+          "MethodBodyContent": "{(AsProgramCall ? \"CALL \": \"\")}{PlasmaTransferCommand}{(string.IsNullOrEmpty(PlasmaTransferArguments) ? \"\" : \"(\" + string.Join(\"\", PlasmaTransferArguments) + \")\")}"
+        },
+        "ValidEventIndices": {
+          "$type": "EventIndices",
+          "$value": "After"
+        }
+      },
+      "EventParameters": {
+        "$id": "7",
+        "$type": "List<object>",
+        "$values": [
+          {
+            "$id": "8",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "d730ae74-e5a6-473c-8528-e97c4700d041"
+            },
+            "DefaultValue": "CALL PLASMA_TRANSFER",
+            "Descriptions": {
+              "$id": "9",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "PlasmaTransferCommand",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "10",
+            "$type": "TextEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "c7ebe593-558b-47e3-b895-9c87a266d707"
+            },
+            "DefaultValue": "",
+            "Descriptions": {
+              "$id": "11",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "PlasmaTransferArguments",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          },
+          {
+            "$id": "12",
+            "$type": "BooleanEventParameter",
+            "DataMemberNameUid": {
+              "$type": "Guid",
+              "$value": "4fb5f519-f3ef-4fa1-b9d4-99a3abb1742d"
+            },
+            "DefaultValue": {
+              "$type": "bool",
+              "$value": true
+            },
+            "Descriptions": {
+              "$id": "13",
+              "$type": "List<string>",
+              "$values": [
+                ""
+              ]
+            },
+            "Id": "AsProgramCall",
+            "IsMetEditable": {
+              "$type": "bool",
+              "$value": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Platform>x64</Platform>
+    <TargetFramework>net48</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Deterministic>false</Deterministic>
+    <Platforms>x64</Platforms>
+    <Nullable>disable</Nullable>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisMode>All</AnalysisMode>
+    <AnalysisLevel>6.0</AnalysisLevel>
+    <UseWpf>true</UseWpf>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectGuid>{8A28FA97-5B49-4CFD-BD9A-B81DE3CB8DF6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Robotmaster.Processor.Fanuc</RootNamespace>
+    <AssemblyName>Robotmaster.Processor.Fanuc</AssemblyName>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Version>10.0.71.$([System.DateTime]::UtcNow.ToString('HHmm'))</Version>
+    <!-- The package id can be changed for client branches. This will change the name of the NuGet generated. -->
+    <PackageId>Robotmaster.Processor.Fanuc</PackageId>
+    <Title>Robotmaster Fanuc Processor </Title>
+    <Authors>Hypertherm Inc.</Authors>
+    <PackageDescription></PackageDescription>
+    <Description></Description>
+    <Copyright>Copyright 2002-$([System.DateTime]::Now.Year) Hypertherm Inc. All rights reserved.</Copyright>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="PDE Files\**\*" />
+    <EmbeddedResource Include="**\*.csproj; **\*.txt; **\*.json; **\*.snk; **\*.proc; **\*.rmevent; **\*.rmpde" Exclude="obj\**;.vs\**;.vscode\**" />
+  </ItemGroup>
+  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>$(AssemblyName).Test,PublicKey=0024000004800000940000000602000000240000525341310004000001000100790c1a8b95c81c56f7201ef8e04678bbb15bf0b8402c759c916d5bdce1d4c1445b0eae5cb28aebb4edc572f5d2a1b49ffaaff0f6cdb506c69d9df9b58de5241ba8f004401bb469672ef81e13c2eb219a5c0b693d43d4570811501be174f2ea4367da70c2665bd69b5dc0ed5424fc93dc084a28865db5a5a1a7d8d2228c1bf6d0</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <ItemGroup>
+      <!-- Change build action of .cs files to "Embedded Resource" -->
+      <EmbeddedResourceFiles Include="**\*.cs" Exclude="obj\**" />
+    </ItemGroup>
+    <!-- Change the build action to "EmbeddedResource" -->
+    <ItemGroup>
+      <EmbeddedResource Include="@(EmbeddedResourceFiles)" />
+    </ItemGroup>
+  </Target>
+  <!-- Define post-build event -->
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <!-- Revert the build action of .cs files to "Compile" -->
+    <ItemGroup>
+      <Compile Include="@(EmbeddedResource)" />
+      <EmbeddedResource Remove="@(EmbeddedResource)" />
+    </ItemGroup>
+  </Target>
+  <ItemGroup>
+    <Reference Include="C5xLibCs, Version=1.32.0.0, Culture=neutral, PublicKeyToken=87dcbe35c024017c">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\C5xLibCs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\EntityFramework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\EntityFramework.SqlServer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.7.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\ExcelDataReader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.7.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\ExcelDataReader.DataSet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Hypertherm.FontLibrary, Version=0.12392.1.0, Culture=neutral, PublicKeyToken=3d45821f3ea71336">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Hypertherm.FontLibrary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=4.15.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\MathNet.Numerics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MeshToolkitWrapper, Version=2024.8.1.3, Culture=neutral, PublicKeyToken=1940e54dc9b57d60">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\MeshToolkitWrapper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.23.0.29, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.23.0.29, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.23.0.29, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.23.0.29, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.23.0.29, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mwEntities, Version=2024.8.1.3, Culture=neutral, PublicKeyToken=1940e54dc9b57d60">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\mwEntities.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mwInterop, Version=2024.8.1.3, Culture=neutral, PublicKeyToken=1940e54dc9b57d60">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\mwInterop.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NirvaCad.CadModule, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\NirvaCad.CadModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NirvaCad.SurfacePath, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Nirvacad.SurfacePath.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\NLog.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ookii.Dialogs.Wpf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0c15020868fd6249">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Ookii.Dialogs.Wpf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PPInterface-Wrapper, Version=2024.8.1.3, Culture=neutral, PublicKeyToken=1940e54dc9b57d60">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\PPInterface-Wrapper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.AutomaticPathPlanning, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.AutomaticPathPlanning.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.Behavior, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.Behavior.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.Bootstrap, Version=10.0.49051.50315, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.Bootstrap.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.CadEngine, Version=3.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.CadEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.CAM.Import, Version=10.0.49051.50315, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.CAM.Import.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.CollisionDetection, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.CollisionDetection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.ComponentBasedTree, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.ComponentBasedTree.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.Device, Version=10.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.Device.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.ECatalogue.EClient, Version=10.0.49051.50315, Culture=neutral, PublicKeyToken=07e9cd207067a10d">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.ECatalogue.EClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.FrameHierarchy, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.FrameHierarchy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.Kinematics, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.Kinematics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.License, Version=13.0.0.0, Culture=neutral, PublicKeyToken=a22044218c9cbb6d">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.License.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.Math, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.Math.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.Package, Version=10.0.49051.50315, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.Package.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.PathEngine, Version=8.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.PathEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.Processor.Core, Version=10.0.71.24214, Culture=neutral, PublicKeyToken=50caa9024fa374d9">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.Processor.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.Rendering, Version=7.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.Rendering.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.Rise, Version=10.0.49051.50315, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.Rise.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.Serialization, Version=3.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.Serialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.VsReferenceSynchronization, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.VsReferenceSynchronization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Robotmaster.Wpf, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d5e9345bc8fd3089">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Robotmaster.Wpf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Spatial.CGM.NET, Version=6.426.0.23306, Culture=neutral, PublicKeyToken=aba3293e67389366">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Spatial.CGM.NET.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Tao.OpenGl, Version=2.1.0.12, Culture=neutral, PublicKeyToken=1ca010269a4501ef">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Tao.OpenGl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Tao.Platform.Windows, Version=1.0.0.5, Culture=neutral, PublicKeyToken=701104b2da67a104">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\Tao.Platform.Windows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WibuCmNET, Version=8.20.6539.500, Culture=neutral, PublicKeyToken=01d86e1eb0c69c23">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\WibuCmNET.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="wupi.net, Version=9.20.8.500, Culture=neutral, PublicKeyToken=5f399135ee0c35d4">
+      <HintPath>C:\Program Files\Hypertherm\Robotmaster 2025\Robotmaster\wupi.net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="CopyProjectOutputToProcessorCatalogue" AfterTargets="AfterBuild">
+    <PropertyGroup>
+      <PathToProcessorCatalogue>C:\Users\Public\Documents\Robotmaster 2025\catalogue\processor</PathToProcessorCatalogue>
+    </PropertyGroup>
+    <ItemGroup>
+      <OutputFilesToCopy Include="$(OutDir)$(TargetName).dll;$(OutDir)$(TargetName).pdb" />
+    </ItemGroup>
+    <Message Text="Copying files to processor catalogue (PathToProcessorCatalogue)." />
+    <Copy SourceFiles="@(OutputFilesToCopy)" DestinationFolder="$(PathToProcessorCatalogue)" OverwriteReadOnlyFiles="True" ContinueOnError="WarnAndContinue" />
+  </Target>
+</Project>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProcessPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <section
+    ClassName="ToolChangeSettings">
+    <SettingContract
+      Label="Tool change"
+      ContractKey="PM_73208de0-7381-4e81-aa40-9ada9b40c9cd"
+      Domain="Setup"
+      InvalidDomains="Program|Operation|Transition|TaskOperation"
+      UiHandlerAssemblyName="Robotmaster.Rise.dll"
+      UiHandlerBehaviorName="Robotmaster.Rise.Modules.PropertyViewer.PropertyViewerBehavior"
+      DataHandlerAssemblyName="null"
+      DataHandlerTypeName="null"
+      DataHandlerMethodName="null"
+      DataTypeAssemblyName="Robotmaster.Rise.dll"
+      DataTypeName="Robotmaster.Rise.BaseClasses.Settings.ExternalMenuData"
+      ImageUri="null"
+      ImageKey="f0c1" />
+    <CustomSettings>
+      <Cat
+        label="General settings"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="Tool change condition"
+          enable="true"
+          visible="true"
+          UID="{40E63D9D-6291-49B8-AE8F-F81962E3BDDA}"
+          postVar="ToolChangeCondition"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="The tool change macro output type." />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="IfNeeded"
+              itemLabel="If needed" />
+            <Item
+              index="1"
+              variableName="Disable"
+              itemLabel="Disable" />
+            <Item
+              index="2"
+              variableName="Enable"
+              itemLabel="Enable" />
+          </List>
+        </ListParam>
+        <ListParam
+          label="Tool change macro name type"
+          enable="true"
+          visible="true"
+          UID="{A29926A4-0C69-44B7-99B3-F9548E6E5F29}"
+          postVar="ToolChangeMacroNameType"
+          defVal="0"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="The tool change macro name type." />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="CustomName"
+              itemLabel="Custom name" />
+            <Item
+              index="1"
+              variableName="ToolName"
+              itemLabel="Tool name" />
+          </List>
+        </ListParam>
+        <TxtParam
+          label="Custom macro name"
+          enable="true"
+          visible="true"
+          UID="{B5808783-13F8-4D31-B95C-8ED99A890866}"
+          postVar="ToolChangeMacroCustomName"
+          defVal="TOOL">
+          <Desc>
+            <Text
+              line="The custom tool macro name to be followed by the tool number." />
+          </Desc>
+        </TxtParam>
+        <ListParam
+          label="First tool change output"
+          enable="true"
+          visible="true"
+          UID="{93641EB2-B849-4520-BBAF-058D4976A94D}"
+          postVar="FirstToolChangeOutputCondition"
+          defVal="0"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="The first tool change output condition." />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="BeforeHome"
+              itemLabel="Before Home" />
+            <Item
+              index="1"
+              variableName="AfterHome"
+              itemLabel="After Home" />
+          </List>
+        </ListParam>
+      </Cat>
+      <Cat
+        label="Non-tool change macros"
+        enable="true"
+        visible="true">
+        <BoolParam
+          label="Use macro name as program call"
+          enable="true"
+          visible="true"
+          UID="{2BCB3A8E-4902-498D-91B3-292D712473D5}"
+          postVar="IsMacroNameCallEnabled"
+          defVal="false">
+          <Desc>
+            <Text
+              line="When enabled, simulated macros will be output in the point list. The macro name will be used as the program call" />
+          </Desc>
+        </BoolParam>
+      </Cat>
+    </CustomSettings>
+  </section>
+</ProcessPackage>

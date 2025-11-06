@@ -1,0 +1,491 @@
+{
+  "$id": "1",
+  "$type": "object[]",
+  "$count": 1,
+  "$values": [
+    {
+      "$id": "2",
+      "$type": "PdeProject",
+      "ProcessorDefinition": {
+        "$id": "3",
+        "$type": "ProcessorDefinition",
+        "Processes": {
+          "$id": "4",
+          "$type": "List<Process>",
+          "$values": [
+            {
+              "$id": "5",
+              "$type": "Process",
+              "Name": "Cutting Process",
+              "Id": "Cutting",
+              "DataContractGuid": "d4b8b332-d740-424b-a002-ad3fea0dd9b6",
+              "ProcessMenus": {
+                "$id": "6",
+                "$type": "List<Menu>",
+                "$values": [
+                  {
+                    "$id": "7",
+                    "$type": "Menu",
+                    "Id": "ProcessActivationSettings"
+                  },
+                  {
+                    "$id": "8",
+                    "$type": "Menu",
+                    "Id": "ToolChangeSettings"
+                  },
+                  {
+                    "$id": "9",
+                    "$type": "Menu",
+                    "Id": "PrecisionMotionOverrides"
+                  }
+                ]
+              },
+              "MetEvents": {
+                "$id": "10",
+                "$type": "List<Event>",
+                "$values": [
+                  {
+                    "$id": "11",
+                    "$type": "Event",
+                    "Id": "Command"
+                  },
+                  {
+                    "$id": "12",
+                    "$type": "Event",
+                    "Id": "Comment"
+                  }
+                ]
+              }
+            },
+            {
+              "$id": "13",
+              "$type": "Process",
+              "Name": "Additive",
+              "Id": "Additive",
+              "DataContractGuid": "20e16ad3-4b4c-48c8-97e0-bedfdd39de23",
+              "ProcessMenus": {
+                "$id": "14",
+                "$type": "List<Menu>",
+                "$values": [
+                  {
+                    "$id": "15",
+                    "$type": "Menu",
+                    "Id": "AdditiveSettings"
+                  }
+                ]
+              },
+              "MetEvents": {
+                "$id": "16",
+                "$type": "List<Event>",
+                "$values": [
+                  {
+                    "$id": "17",
+                    "$type": "Event",
+                    "Id": "AdditiveOff"
+                  },
+                  {
+                    "$id": "18",
+                    "$type": "Event",
+                    "Id": "AdditiveOn"
+                  }
+                ]
+              }
+            },
+            {
+              "$id": "19",
+              "$type": "Process",
+              "Name": "Plasma Cutting",
+              "Id": "PlasmaCutting",
+              "DataContractGuid": "54c5fc50-879f-476c-bd39-35fd160c25dc",
+              "ProcessMenus": {
+                "$id": "20",
+                "$type": "List<Menu>",
+                "$values": [
+                  {
+                    "$id": "21",
+                    "$type": "Menu",
+                    "Id": "PlasmaCuttingSettings"
+                  },
+                  {
+                    "$id": "22",
+                    "$type": "Menu",
+                    "Id": "TouchSensingSettings"
+                  }
+                ]
+              },
+              "MetEvents": {
+                "$id": "23",
+                "$type": "List<Event>",
+                "$values": [
+                  {
+                    "$id": "24",
+                    "$type": "Event",
+                    "Id": "AvcOff"
+                  },
+                  {
+                    "$id": "25",
+                    "$type": "Event",
+                    "Id": "AvcOn"
+                  },
+                  {
+                    "$id": "26",
+                    "$type": "Event",
+                    "Id": "Pierce"
+                  },
+                  {
+                    "$id": "27",
+                    "$type": "Event",
+                    "Id": "PlasmaOff"
+                  },
+                  {
+                    "$id": "28",
+                    "$type": "Event",
+                    "Id": "PlasmaOn"
+                  },
+                  {
+                    "$id": "29",
+                    "$type": "Event",
+                    "Id": "PlasmaSpeedOverride"
+                  },
+                  {
+                    "$id": "30",
+                    "$type": "Event",
+                    "Id": "PlasmaSpeedReset"
+                  },
+                  {
+                    "$id": "31",
+                    "$type": "Event",
+                    "Id": "PlasmaTransfer"
+                  }
+                ]
+              }
+            },
+            {
+              "$id": "32",
+              "$type": "Process",
+              "Name": "Welding",
+              "Id": "Welding",
+              "DataContractGuid": "e3f186b9-be3c-4fdc-a653-e2932e7593cc",
+              "ProcessMenus": {
+                "$id": "33",
+                "$type": "List<Menu>",
+                "$values": [
+                  {
+                    "$id": "34",
+                    "$type": "Menu",
+                    "Id": "WeldingSettings"
+                  },
+                  {
+                    "$id": "35",
+                    "$type": "Menu",
+                    "Id": "TouchSensingSettings"
+                  }
+                ]
+              },
+              "MetEvents": {
+                "$id": "36",
+                "$type": "List<Event>",
+                "$values": [
+                  {
+                    "$id": "37",
+                    "$type": "Event",
+                    "Id": "ArcEnd"
+                  },
+                  {
+                    "$id": "38",
+                    "$type": "Event",
+                    "Id": "ArcStart"
+                  },
+                  {
+                    "$id": "39",
+                    "$type": "Event",
+                    "Id": "Command"
+                  },
+                  {
+                    "$id": "40",
+                    "$type": "Event",
+                    "Id": "Comment"
+                  },
+                  {
+                    "$id": "41",
+                    "$type": "Event",
+                    "Id": "SeamTrackingEnd"
+                  },
+                  {
+                    "$id": "42",
+                    "$type": "Event",
+                    "Id": "SeamTrackingStart"
+                  },
+                  {
+                    "$id": "43",
+                    "$type": "Event",
+                    "Id": "SearchDirection"
+                  },
+                  {
+                    "$id": "44",
+                    "$type": "Event",
+                    "Id": "SearchEnd"
+                  },
+                  {
+                    "$id": "45",
+                    "$type": "Event",
+                    "Id": "SearchStart"
+                  },
+                  {
+                    "$id": "46",
+                    "$type": "Event",
+                    "Id": "TouchOffsetEnd"
+                  },
+                  {
+                    "$id": "47",
+                    "$type": "Event",
+                    "Id": "TouchOffsetStart"
+                  },
+                  {
+                    "$id": "48",
+                    "$type": "Event",
+                    "Id": "WeaveEnd"
+                  },
+                  {
+                    "$id": "49",
+                    "$type": "Event",
+                    "Id": "WeaveStart"
+                  }
+                ]
+              }
+            },
+            {
+              "$id": "50",
+              "$type": "Process",
+              "Name": "Thermal Spraying",
+              "Id": "ThermalSpraying",
+              "DataContractGuid": "7f1eafb7-662f-4adc-9a08-ab300f1323d4",
+              "ProcessMenus": {
+                "$id": "51",
+                "$type": "List<Menu>",
+                "$values": []
+              },
+              "MetEvents": {
+                "$id": "52",
+                "$type": "List<Event>",
+                "$values": [
+                  {
+                    "$id": "53",
+                    "$type": "Event",
+                    "Id": "SpeedChange"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "DeviceMenus": {
+          "$id": "54",
+          "$type": "List<Menu>",
+          "$values": [
+            {
+              "$id": "55",
+              "$type": "Menu",
+              "Id": "MotionSettings"
+            },
+            {
+              "$id": "56",
+              "$type": "Menu",
+              "Id": "ControllerSettings"
+            },
+            {
+              "$id": "57",
+              "$type": "Menu",
+              "Id": "PickPlaceSettings"
+            }
+          ]
+        },
+        "Events": {
+          "$id": "58",
+          "$type": "List<Event>",
+          "$values": [
+            {
+              "$id": "59",
+              "$type": "Event",
+              "Id": "AdditiveOff"
+            },
+            {
+              "$id": "60",
+              "$type": "Event",
+              "Id": "AdditiveOn"
+            },
+            {
+              "$id": "61",
+              "$type": "Event",
+              "Id": "ArcEnd"
+            },
+            {
+              "$id": "62",
+              "$type": "Event",
+              "Id": "ArcStart"
+            },
+            {
+              "$id": "63",
+              "$type": "Event",
+              "Id": "AvcOff"
+            },
+            {
+              "$id": "64",
+              "$type": "Event",
+              "Id": "AvcOn"
+            },
+            {
+              "$id": "65",
+              "$type": "Event",
+              "Id": "Command"
+            },
+            {
+              "$id": "66",
+              "$type": "Event",
+              "Id": "Comment"
+            },
+            {
+              "$id": "67",
+              "$type": "Event",
+              "Id": "Delay"
+            },
+            {
+              "$id": "68",
+              "$type": "Event",
+              "Id": "GripperClose"
+            },
+            {
+              "$id": "69",
+              "$type": "Event",
+              "Id": "GripperOpen"
+            },
+            {
+              "$id": "70",
+              "$type": "Event",
+              "Id": "Handshake"
+            },
+            {
+              "$id": "71",
+              "$type": "Event",
+              "Id": "Pierce"
+            },
+            {
+              "$id": "72",
+              "$type": "Event",
+              "Id": "PlasmaOff"
+            },
+            {
+              "$id": "73",
+              "$type": "Event",
+              "Id": "PlasmaOn"
+            },
+            {
+              "$id": "74",
+              "$type": "Event",
+              "Id": "PlasmaProcess"
+            },
+            {
+              "$id": "75",
+              "$type": "Event",
+              "Id": "PlasmaSpeedOverride"
+            },
+            {
+              "$id": "76",
+              "$type": "Event",
+              "Id": "PlasmaSpeedReset"
+            },
+            {
+              "$id": "77",
+              "$type": "Event",
+              "Id": "PlasmaTransfer"
+            },
+            {
+              "$id": "78",
+              "$type": "Event",
+              "Id": "PointOffset"
+            },
+            {
+              "$id": "79",
+              "$type": "Event",
+              "Id": "ProcessOff"
+            },
+            {
+              "$id": "80",
+              "$type": "Event",
+              "Id": "ProcessOn"
+            },
+            {
+              "$id": "81",
+              "$type": "Event",
+              "Id": "SeamTrackingEnd"
+            },
+            {
+              "$id": "82",
+              "$type": "Event",
+              "Id": "SeamTrackingStart"
+            },
+            {
+              "$id": "83",
+              "$type": "Event",
+              "Id": "SearchDirection"
+            },
+            {
+              "$id": "84",
+              "$type": "Event",
+              "Id": "SearchEnd"
+            },
+            {
+              "$id": "85",
+              "$type": "Event",
+              "Id": "SearchMacro"
+            },
+            {
+              "$id": "86",
+              "$type": "Event",
+              "Id": "SearchStart"
+            },
+            {
+              "$id": "87",
+              "$type": "Event",
+              "Id": "SpeedChange"
+            },
+            {
+              "$id": "88",
+              "$type": "Event",
+              "Id": "SyncSchedule"
+            },
+            {
+              "$id": "89",
+              "$type": "Event",
+              "Id": "ToolChange"
+            },
+            {
+              "$id": "90",
+              "$type": "Event",
+              "Id": "TouchOffsetEnd"
+            },
+            {
+              "$id": "91",
+              "$type": "Event",
+              "Id": "TouchOffsetStart"
+            },
+            {
+              "$id": "92",
+              "$type": "Event",
+              "Id": "WeaveEnd"
+            },
+            {
+              "$id": "93",
+              "$type": "Event",
+              "Id": "WeaveStart"
+            }
+          ]
+        },
+        "DslVersion": {
+          "$type": "int",
+          "$value": 31
+        }
+      }
+    }
+  ]
+}

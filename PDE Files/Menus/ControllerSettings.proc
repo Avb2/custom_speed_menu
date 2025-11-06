@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProcessPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <section
+    ClassName="ControllerSettings">
+    <SettingContract
+      Label="Controller Settings"
+      ContractKey="DM_9f9916d7-a22c-4bf6-8539-e2a6a7877d7b"
+      Domain="Cell"
+      InvalidDomains="Setup|Program|Operation|Transition|TaskOperation"
+      UiHandlerAssemblyName="Robotmaster.Rise.dll"
+      UiHandlerBehaviorName="Robotmaster.Rise.Modules.PropertyViewer.PropertyViewerBehavior"
+      DataHandlerAssemblyName="null"
+      DataHandlerTypeName="null"
+      DataHandlerMethodName="null"
+      DataTypeAssemblyName="Robotmaster.Rise.dll"
+      DataTypeName="Robotmaster.Rise.BaseClasses.Settings.ExternalMenuData"
+      ImageUri="null"
+      ImageKey="f0c1"
+      IsLocked="true" />
+    <CustomSettings>
+      <Cat
+        label="Programs"
+        enable="true"
+        visible="true">
+        <NumParam
+          label="Maximum line number (0=Disable)"
+          enable="true"
+          visible="true"
+          UID="{AF59B587-4D4C-4FBC-A250-58FF0EDE004D}"
+          postVar="MaximumLine"
+          defVal="0"
+          type="integer">
+          <Desc>
+            <Text
+              line="Maximum line number per program file." />
+          </Desc>
+        </NumParam>
+        <BoolParam
+          label="Batch programs into subdirectory"
+          enable="true"
+          visible="true"
+          UID="{C50E83C3-28BE-424E-9DDE-4B8EA08218E4}"
+          postVar="IsProgramBatched"
+          defVal="false">
+          <Desc>
+            <Text
+              line="If enabled, the output program will be placed into a sub folder at the desired output directory" />
+            <Text
+              line="The folder name will have the same name as the program." />
+          </Desc>
+        </BoolParam>
+        <BoolParam
+          label="Enable Line Number Output"
+          enable="true"
+          visible="true"
+          UID="{E43120D7-E45A-42A4-A4E7-C7369F228823}"
+          postVar="IsLineNumberEnabled"
+          defVal="true">
+          <Desc>
+            <Text
+              line="Enables or disables the output of line numbers in the robotic code." />
+          </Desc>
+        </BoolParam>
+        <ListParam
+          label="Output scheduler program"
+          enable="true"
+          visible="true"
+          UID="{AC6DC4CE-5A12-49B9-B99F-2AFF654D1BA5}"
+          postVar="SchedulerProgramOutputType"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="If disabled, a scheduler program will never be generated." />
+            <Text
+              line="If when needed, a scheduler program will be generated when a multi-robot simultaneous setup is in the session." />
+            <Text
+              line="If always, a scheduler program will always be generated." />
+            <Text
+              line="" />
+            <Text
+              line="The scheduler program will call each robot program posted in the order they appear in the scheduler." />
+            <Text
+              line="This formatting assumes multiple robots are connected to a single controller using Fanuc's MultiArm option." />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disable"
+              itemLabel="Disable" />
+            <Item
+              index="1"
+              variableName="WhenNeeded"
+              itemLabel="When needed" />
+            <Item
+              index="2"
+              variableName="Always"
+              itemLabel="Always" />
+          </List>
+        </ListParam>
+        <NumParam
+          label="Scheduler time buffer"
+          enable="true"
+          visible="true"
+          UID="{38D2FEC2-77F0-44BA-803D-4AA230474DFF}"
+          postVar="SchedulerTimeBuffer"
+          defVal="0.01"
+          type="double">
+          <Desc>
+            <Text
+              line="The time the scheduler program should wait between sets of program execution to avoid an INTP-267 error." />
+            <Text
+              line="Increasing this value decreases the chances a new robot task will begin before its previous task completed." />
+          </Desc>
+        </NumParam>
+      </Cat>
+      <Cat
+        label="Frames"
+        enable="true"
+        visible="true">
+        <ListParam
+          label="User frame output type"
+          enable="true"
+          visible="true"
+          UID="{1F535CD5-8BB2-41A1-8F43-B6726D7886F5}"
+          postVar="UserFrameOutputType"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="The user frame output type." />
+            <Text
+              line="If by value, then user frame used is explicitly output in the robotic code." />
+            <Text
+              line="If by register, then user frame used is found in the register of the controller." />
+            <Text
+              line="Robotic syntax: UFRAME." />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disable"
+              itemLabel="Disable" />
+            <Item
+              index="1"
+              variableName="ByRegister"
+              itemLabel="By register" />
+            <Item
+              index="2"
+              variableName="ByValue"
+              itemLabel="By value" />
+          </List>
+        </ListParam>
+        <NumParam
+          label="User frame position register number"
+          enable="true"
+          visible="true"
+          UID="{B61A5F22-6409-4E8E-8849-AEBEA57DB62F}"
+          postVar="UserFrameRegisterNumber"
+          defVal="1"
+          type="integer">
+          <Desc>
+            <Text
+              line="The user frame position register number." />
+            <Text
+              line="If user frame is output by value. The position register is used for defining the user frame in the robotic code." />
+            <Text
+              line="Robotic syntax: PR[number]." />
+          </Desc>
+        </NumParam>
+        <BoolParam
+          label="Enable user frame value output as comment"
+          enable="true"
+          visible="true"
+          UID="{F29BCD5A-DB0C-4594-8E79-AA6588615E95}"
+          postVar="IsUserFrameOutputAsComment"
+          defVal="false">
+          <Desc>
+            <Text
+              line="Enables or disables the output of the user frame values as comment." />
+            <Text
+              line="If unchecked, then it will not output the user frame value as comment." />
+            <Text
+              line="If checked, then it will output the user frame value as comment." />
+          </Desc>
+        </BoolParam>
+        <ListParam
+          label="Tool frame output type"
+          enable="true"
+          visible="true"
+          UID="{DD5DAA02-ED51-4FE6-8131-A757867CBFA9}"
+          postVar="ToolFrameOutputType"
+          defVal="1"
+          outputMode="index">
+          <Desc>
+            <Text
+              line="The tool frame output type." />
+            <Text
+              line="If by value, then tool frame used is explicitly output in the robotic code." />
+            <Text
+              line="If by register, then tool frame used is found in the register of the controller." />
+            <Text
+              line="Robotic syntax: UTOOL." />
+          </Desc>
+          <List>
+            <Item
+              index="0"
+              variableName="Disable"
+              itemLabel="Disable" />
+            <Item
+              index="1"
+              variableName="ByRegister"
+              itemLabel="By register" />
+            <Item
+              index="2"
+              variableName="ByValue"
+              itemLabel="By value" />
+          </List>
+        </ListParam>
+        <NumParam
+          label="Tool frame position register number"
+          enable="true"
+          visible="true"
+          UID="{EB8A4789-433F-40E7-A1A1-174B06B1A693}"
+          postVar="ToolFrameRegisterNumber"
+          defVal="2"
+          type="integer">
+          <Desc>
+            <Text
+              line="The tool frame position register number." />
+            <Text
+              line="If tool frame is output by value. The position register is used for defining the tool frame in the robotic code." />
+            <Text
+              line="Robotic syntax: PR[number]." />
+          </Desc>
+        </NumParam>
+        <BoolParam
+          label="Enable tool frame value output as comment"
+          enable="true"
+          visible="true"
+          UID="{BC2F16F9-04F9-40C5-81C8-7FA048C014A3}"
+          postVar="IsToolFrameOutputAsComment"
+          defVal="false">
+          <Desc>
+            <Text
+              line="Enables or disables the output of the tool frame values as comment." />
+            <Text
+              line="If unchecked, then it will not output the tool frame value as comment." />
+            <Text
+              line="If checked, then it will output the tool frame value as comment." />
+          </Desc>
+        </BoolParam>
+      </Cat>
+      <Cat
+        label="Variables"
+        enable="true"
+        visible="true">
+        <NumParam
+          label="Position Registry start index (PR)"
+          enable="true"
+          visible="true"
+          UID="{8211CEF2-6766-445D-B77C-8FD386383B7F}"
+          postVar="PositionRegistryStartIndex"
+          defVal="50"
+          type="integer">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+        </NumParam>
+        <NumParam
+          label="Position Registry start index (PR)"
+          enable="true"
+          visible="true"
+          UID="{87199BF2-A5EC-4BFD-BA90-5DBD4746ABB3}"
+          postVar="PositionRegistryMaxIndex"
+          defVal="100"
+          type="integer">
+          <Desc>
+            <Text
+              line="" />
+          </Desc>
+        </NumParam>
+      </Cat>
+    </CustomSettings>
+  </section>
+</ProcessPackage>
